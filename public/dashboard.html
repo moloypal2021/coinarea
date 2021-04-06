@@ -14,11 +14,12 @@
     <div>
         <div x-data="{ sidebarOpen: false }">
             <!-- Header Start -->
-            <header class="flex items-center py-4 lg:py-6 px-6 lg:px-12 bg-light-nav">
+            <header
+                class="flex items-center py-4 lg:py-6 px-3 sm:px-6 lg:px-12 bg-light-nav fixed top-0 inset-x-0 z-50">
                 <!-- Logo Area -->
-                <div class="flex items-center w-64">
+                <div class="flex items-center sm:w-72 w-32">
                     <!-- Sidebar Toggle -->
-                    <button @click="sidebarOpen = true" class="text-gray-500 focus:outline-none mr-6 lg:hidden">
+                    <button @click="sidebarOpen = true" class="text-gray-500 focus:outline-none sm:mr-6 mr-2 lg:hidden">
                         <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M4 6H20M4 12H20M4 18H11" stroke="currentColor" stroke-width="2"
                                 stroke-linecap="round" stroke-linejoin="round"></path>
@@ -39,17 +40,17 @@
                     </div>
                 </div>
 
-                <div class="flex lg:justify-between justify-end items-center space-x-4 w-full pl-4">
+                <div class="flex lg:justify-between justify-end items-center sm:space-x-4 space-x-2 w-full pl-6">
                     <!-- Currency Stategy  -->
                     <div class="relative inline-block text-left" x-data="{isOpen: false}" @click.away="isOpen = false">
                         <!-- Mobile Currency Dropdown -->
                         <div class="block lg:hidden">
                             <button type="button"
-                                class="inline-flex justify-center items-center w-full rounded-md border px-4 py-2 bg-white hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500"
+                                class="inline-flex justify-center items-center w-full rounded-md border px-2 sm:px-4 py-2 bg-white hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500"
                                 @click="isOpen = !isOpen" id="options-menu" aria-expanded="true" aria-haspopup="true">
-                                <div class="flex items-center mr-1">
-                                    <span class="text-xs text-black font-semibold mr-0.5">BTC/USD</span>
-                                    <span class="text-xs text-success font-semibold mr-0.5">9967.26</span>
+                                <div class="flex items-center w-9 sm:w-auto overflow-hidden mr-1">
+                                    <span class="text-xs text-black font-semibold sm:mr-0.5">BTC/USD</span>
+                                    <span class="text-xs text-success font-semibold sm:mr-0.5">9967.26</span>
                                     <span>
                                         <svg width="6" height="6" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path
@@ -147,10 +148,10 @@
                     </div>
                     <!-- Avater -->
                     <a href="#" class="flex items-center">
-                        <div class="mr-4">
+                        <div class="mr-4 hidden sm:block">
                             <h6 class="text-base text-black font-semibold">Hello, Yurii!</h6>
                         </div>
-                        <div class="relative block h-10 w-10 rounded-full overflow-hidden">
+                        <div class="relative block h-8 sm:h-10 w-8 sm:w-10 rounded-full overflow-hidden">
                             <img class="h-full w-full object-cover" src="./assets/images/avater.jpg" alt="Your avatar">
                         </div>
                     </a>
@@ -159,458 +160,474 @@
             <!-- Header End -->
 
             <!-- Content Section Start -->
-            <div class="flex h-screen bg-white">
+            <div class="flex h-screen bg-white pt-[88px]">
+                <!-- Sidebar Start -->
+
+                <!-- Mobile screen overlay Start -->
                 <div :class="sidebarOpen ? 'block' : 'hidden'" @click="sidebarOpen = false"
                     class="fixed z-20 inset-0 bg-black opacity-50 transition-opacity lg:hidden"></div>
+                <!-- Mobile screen overlay End -->
 
                 <div :class="sidebarOpen ? 'translate-x-0 ease-out' : '-translate-x-full ease-in'"
-                    class="fixed z-30 inset-y-0 left-0 w-64 transition duration-300 transform bg-white overflow-y-auto lg:translate-x-0 lg:static lg:inset-0">
-                    <nav class="mt-10">
+                    class="fixed z-30 inset-y-0 left-0 w-72 transition duration-300 transform bg-white overflow-y-auto lg:translate-x-0 lg:static lg:inset-0">
+                    <!-- Sidebar Menus -->
+                    <nav class="px-12 mt-5 lg:pt-0 pt-20">
+                        <ul class="flex flex-col space-y-4">
+                            <li><a href="#"
+                                    class="text-sm text-success font-medium pb-1 border-b-2 border-success">Dashboard</a>
+                            </li>
+                            <li><a href="#"
+                                    class="text-sm text-paragraph hover:text-success font-medium pb-1 border-b-2 border-transparent hover:border-success">Make
+                                    deposit </a>
+                            </li>
+                            <li><a href="#"
+                                    class="text-sm text-paragraph hover:text-success font-medium pb-1 border-b-2 border-transparent hover:border-success">Your
+                                    deposit</a>
+                            </li>
+                            <li><a href="#"
+                                    class="text-sm text-paragraph hover:text-success font-medium pb-1 border-b-2 border-transparent hover:border-success">Transactions</a>
+                            </li>
+                            <li><a href="#"
+                                    class="text-sm text-paragraph hover:text-success font-medium pb-1 border-b-2 border-transparent hover:border-success">Exchange
+                                </a>
+                            </li>
+                            </li>
+                            <li><a href="#"
+                                    class="text-sm text-paragraph hover:text-success font-medium pb-1 border-b-2 border-transparent hover:border-success">Partners
+                                </a>
+                            </li>
+                            <li><a href="#"
+                                    class="text-sm text-paragraph hover:text-success font-medium pb-1 border-b-2 border-transparent hover:border-success">Internal
+                                    Transfer
+                                </a>
+                            </li>
+                            <li><a href="#"
+                                    class="text-sm text-paragraph hover:text-success font-medium pb-1 border-b-2 border-transparent hover:border-success">Exchange
+                                </a>
+                            </li>
+                            <li><a href="#"
+                                    class="text-sm text-paragraph hover:text-success font-medium pb-1 border-b-2 border-transparent hover:border-success">Promo-Materials
+                                </a>
+                            </li>
 
+                            <li><a href="#"
+                                    class="text-sm text-paragraph hover:text-success font-medium pb-1 border-b-2 border-transparent hover:border-success">Become
+                                    a representative
+                                </a>
+                            </li>
+                            <li><a href="#"
+                                    class="text-sm text-paragraph hover:text-success font-medium pb-1 border-b-2 border-transparent hover:border-success">Account
+                                    settings
+                                </a>
+                            </li>
+                            <li><a href="#"
+                                    class="text-sm text-paragraph hover:text-success font-medium pb-1 border-b-2 border-transparent hover:border-success">Security
+                                </a>
+                            </li>
+                            <li><a href="#"
+                                    class="text-sm text-paragraph hover:text-success font-medium pb-1 border-b-2 border-transparent hover:border-success">Logout
+                                </a>
+                            </li>
+
+
+                        </ul>
                     </nav>
                 </div>
+                <!-- Sidebar End -->
 
+                <!-- Main Content Start -->
                 <div class="flex-1 flex flex-col overflow-hidden">
                     <main class="flex-1 overflow-x-hidden overflow-y-auto bg-white">
-                        <div class="container mx-auto px-6 py-8">
-                            <h3 class="text-gray-700 text-3xl font-medium">Dashboard</h3>
+                        <div class="container mx-auto px-6 py-5">
+                            <div
+                                class="flex sm:flex-row flex-col justify-between sm:items-center space-y-2 sm:space-y-0 mb-5">
+                                <h3 class="text-paragraph text-sm font-bold uppercase tracking-[0.2em]">Dashboard</h3>
+                                <div class="flex items-center space-x-2">
+                                    <span>
+                                        <svg width="13" height="15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M.483 2.107A8.466 8.466 0 006.084 0a8.466 8.466 0 006.036 2.096v4.598c0 4.54-3.695 7.388-6.06 8.306C3.695 14.082 0 11.233 0 6.694v-4.6c.16.008.32.013.483.013z"
+                                                fill="#fff" />
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M0 2.093a8.633 8.633 0 00.966 0A8.463 8.463 0 006.084 0a8.463 8.463 0 006.036 2.096v4.598c0 4.54-3.695 7.388-6.06 8.306C3.695 14.082 0 11.233 0 6.694v-4.6zm6.06 10.71c1.875-.99 4.06-3.137 4.06-6.109V3.991a10.446 10.446 0 01-4.036-1.502A10.445 10.445 0 012 3.998v2.696c0 2.972 2.185 5.118 4.06 6.109z"
+                                                fill="#31AF68" />
+                                        </svg>
+                                    </span>
+                                    <span class="text-xs font-bold text-paragraph">Yura Elkin | 19 May 2019 |
+                                        192.168.1.16</span>
+                                </div>
+                            </div>
+                            <h6 class="text-sm text-black font-bold mb-5">Your active deposit:</h6>
+                            <h2 class="text-3xl text-black font-bold">$ 17,300.00</h2>
 
-                            <div class="mt-4">
-                                <div class="flex flex-wrap -mx-6">
-                                    <div class="w-full px-6 sm:w-1/2 xl:w-1/3">
-                                        <div class="flex items-center px-5 py-6 shadow-sm rounded-md bg-white">
-                                            <div class="p-3 rounded-full bg-indigo-600 bg-opacity-75">
-                                                <svg class="h-8 w-8 text-white" viewBox="0 0 28 30" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M18.2 9.08889C18.2 11.5373 16.3196 13.5222 14 13.5222C11.6804 13.5222 9.79999 11.5373 9.79999 9.08889C9.79999 6.64043 11.6804 4.65556 14 4.65556C16.3196 4.65556 18.2 6.64043 18.2 9.08889Z"
-                                                        fill="currentColor"></path>
-                                                    <path
-                                                        d="M25.2 12.0444C25.2 13.6768 23.9464 15 22.4 15C20.8536 15 19.6 13.6768 19.6 12.0444C19.6 10.4121 20.8536 9.08889 22.4 9.08889C23.9464 9.08889 25.2 10.4121 25.2 12.0444Z"
-                                                        fill="currentColor"></path>
-                                                    <path
-                                                        d="M19.6 22.3889C19.6 19.1243 17.0927 16.4778 14 16.4778C10.9072 16.4778 8.39999 19.1243 8.39999 22.3889V26.8222H19.6V22.3889Z"
-                                                        fill="currentColor"></path>
-                                                    <path
-                                                        d="M8.39999 12.0444C8.39999 13.6768 7.14639 15 5.59999 15C4.05359 15 2.79999 13.6768 2.79999 12.0444C2.79999 10.4121 4.05359 9.08889 5.59999 9.08889C7.14639 9.08889 8.39999 10.4121 8.39999 12.0444Z"
-                                                        fill="currentColor"></path>
-                                                    <path
-                                                        d="M22.4 26.8222V22.3889C22.4 20.8312 22.0195 19.3671 21.351 18.0949C21.6863 18.0039 22.0378 17.9556 22.4 17.9556C24.7197 17.9556 26.6 19.9404 26.6 22.3889V26.8222H22.4Z"
-                                                        fill="currentColor"></path>
-                                                    <path
-                                                        d="M6.64896 18.0949C5.98058 19.3671 5.59999 20.8312 5.59999 22.3889V26.8222H1.39999V22.3889C1.39999 19.9404 3.2804 17.9556 5.59999 17.9556C5.96219 17.9556 6.31367 18.0039 6.64896 18.0949Z"
-                                                        fill="currentColor"></path>
-                                                </svg>
+                            <!-- Balence Card Start -->
+                            <div class="mt-5">
+                                <h6 class="text-sm text-black font-bold mb-5">Balances</h6>
+                                <div
+                                    class="grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-8 sm:place-content-start">
+                                    <div class="">
+                                        <div class="bg-white shadow-d p-[10px] rounded-[5px]">
+                                            <div class="flex items-center space-x-2 mb-4">
+                                                <span>
+                                                    <svg width="20" height="20" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M9.866 20c5.449 0 9.866-4.477 9.866-10S15.315 0 9.866 0 0 4.477 0 10s4.417 10 9.866 10z"
+                                                            fill="#E57734" />
+                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                            d="M6.64 6.506h.006c-.022.027-.018.02-.006 0zm.059.001l.001-.068-.054.067.053.001zm0 0l-.004.376c-.001.15-.002.3-.005.444-.012.055.019.074.067.062h.124c.172 0 .358 0 .548.015.237.019.413.21.413.418.028 1.349.025 2.679.023 4.009.018.178-.103.312-.309.311a4.27 4.27 0 01-.563.01c-.073.019-.097.025-.103.104-.023.215-.065.46-.107.705-.012.055-.02.102-.027.15a2.495 2.495 0 01-.027.15c.618.002 1.212.01 1.805.019a.167.167 0 01.002.07c-.002.013-.004.024-.001.034-.023.423-.016.864-.01 1.306-.011.055-.005.08.074.086.254-.011.508-.023.769-.01.07.006.073-.012.08-.054l.005-.019c-.004-.116-.001-.234.002-.352.002-.118.005-.236.002-.353-.003-.116 0-.234.002-.352.003-.118.005-.236.002-.352.23-.006.436-.005.642-.004.04.009.041.027.043.055.001.011.002.023.006.037-.023.423-.016.864-.009 1.306-.012.055-.006.08.073.085.115-.002.238 0 .36.002.123.002.246.004.36.001.128.018.128-.003.128-.097v-.013c0-.208-.003-.422-.005-.637l-.005-.637c.006-.08.048-.117.127-.11.503-.047 1-.12 1.49-.32.375-.145.67-.402.858-.787.15-.324.198-.649.209-1.017a2.01 2.01 0 00-.16-.846 1.595 1.595 0 00-.789-.69 2.071 2.071 0 00-.17-.062c-.056-.018-.112-.037-.17-.061a.16.16 0 00.062-.032c.01-.008.02-.015.03-.017.175-.122.344-.269.453-.452.144-.245.18-.514.185-.802 0-.417-.123-.804-.433-1.117a2.128 2.128 0 00-.776-.432l-.89-.17c-.08-.006-.11-.024-.104-.104.018-.135.011-.263.005-.392 0-.313-.001-.625-.008-.963-.012.003-.02-.001-.028-.006-.007-.004-.015-.01-.027-.006-.122-.003-.24-.003-.354-.003-.15 0-.297.001-.445-.006-.055-.013-.073.018-.06.067v.313c-.017.343-.016.655-.01.992-.006.01-.011.024-.016.037-.011.025-.022.051-.038.055-.103 0-.212 0-.32.002l-.322.002a.193.193 0 000-.104c0-.209-.003-.423-.005-.638-.002-.214-.004-.429-.004-.637.012-.055.005-.08-.073-.086a7.532 7.532 0 01-.745.003c-.08-.006-.097.024-.103.104.004.22.006.435.008.65l.007.65c-.006.079-.024.11-.102.103-.143-.004-.284-.001-.424.001-.141.003-.282.006-.424.002a9.751 9.751 0 00-.424.001c-.122.003-.243.005-.365.003zm2.687 5.752c.024-.006.055.012.055.012l.195.002c.354.004.724.008 1.076-.058.297-.048.563-.114.805-.279.424-.262.464-.924.1-1.25-.17-.166-.394-.24-.619-.315-.482-.133-.998-.11-1.493-.088l-.045.003c-.072-.006-.073.014-.077.077l-.002.02c.007.129.005.253.004.377s-.002.248.004.377c-.006.21-.005.417-.003.63.001.16.002.323 0 .492zm1.664-3.126a1.61 1.61 0 01-.254.116c-.281.07-.534.092-.794.114-.1.009-.2.017-.302.029-.052 0-.097-.002-.143-.004-.045-.002-.09-.003-.142-.003-.054-.013-.085-.031-.073-.087.017-.551.016-1.072.008-1.618.006-.08.024-.11.103-.103l.228.003c.302.003.592.006.893.056.242.044.497.137.673.327a.74.74 0 01-.197 1.17z"
+                                                            fill="#fff" />
+                                                    </svg>
+                                                </span>
+                                                <p class="text-sm text-black">Bitcoin</p>
                                             </div>
-
-                                            <div class="mx-5">
-                                                <h4 class="text-2xl font-semibold text-gray-700">8,282</h4>
-                                                <div class="text-gray-500">New Users</div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="w-full mt-6 px-6 sm:w-1/2 xl:w-1/3 sm:mt-0">
-                                        <div class="flex items-center px-5 py-6 shadow-sm rounded-md bg-white">
-                                            <div class="p-3 rounded-full bg-orange-600 bg-opacity-75">
-                                                <svg class="h-8 w-8 text-white" viewBox="0 0 28 28" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M4.19999 1.4C3.4268 1.4 2.79999 2.02681 2.79999 2.8C2.79999 3.57319 3.4268 4.2 4.19999 4.2H5.9069L6.33468 5.91114C6.33917 5.93092 6.34409 5.95055 6.34941 5.97001L8.24953 13.5705L6.99992 14.8201C5.23602 16.584 6.48528 19.6 8.97981 19.6H21C21.7731 19.6 22.4 18.9732 22.4 18.2C22.4 17.4268 21.7731 16.8 21 16.8H8.97983L10.3798 15.4H19.6C20.1303 15.4 20.615 15.1004 20.8521 14.6261L25.0521 6.22609C25.2691 5.79212 25.246 5.27673 24.991 4.86398C24.7357 4.45123 24.2852 4.2 23.8 4.2H8.79308L8.35818 2.46044C8.20238 1.83722 7.64241 1.4 6.99999 1.4H4.19999Z"
-                                                        fill="currentColor"></path>
-                                                    <path
-                                                        d="M22.4 23.1C22.4 24.2598 21.4598 25.2 20.3 25.2C19.1403 25.2 18.2 24.2598 18.2 23.1C18.2 21.9402 19.1403 21 20.3 21C21.4598 21 22.4 21.9402 22.4 23.1Z"
-                                                        fill="currentColor"></path>
-                                                    <path
-                                                        d="M9.1 25.2C10.2598 25.2 11.2 24.2598 11.2 23.1C11.2 21.9402 10.2598 21 9.1 21C7.9402 21 7 21.9402 7 23.1C7 24.2598 7.9402 25.2 9.1 25.2Z"
-                                                        fill="currentColor"></path>
-                                                </svg>
-                                            </div>
-
-                                            <div class="mx-5">
-                                                <h4 class="text-2xl font-semibold text-gray-700">200,521</h4>
-                                                <div class="text-gray-500">Total Orders</div>
+                                            <h6 class="text-base font-bold text-black mb-2">1.45903210 BTC</h6>
+                                            <p class="text-sm text-black mb-1">$ 11300</p>
+                                            <div class="flex space-x-[10px] mt-4">
+                                                <button
+                                                    class="bg-success-alt text-white text-center py-2 rounded text-[10px] font-bold tracking-widest uppercase w-full">Deposit</button>
+                                                <button
+                                                    class="bg-paragraph text-white text-center py-2 rounded text-[10px] font-bold tracking-widest uppercase w-full">Withdraw</button>
                                             </div>
                                         </div>
                                     </div>
-
-                                    <div class="w-full mt-6 px-6 sm:w-1/2 xl:w-1/3 xl:mt-0">
-                                        <div class="flex items-center px-5 py-6 shadow-sm rounded-md bg-white">
-                                            <div class="p-3 rounded-full bg-pink-600 bg-opacity-75">
-                                                <svg class="h-8 w-8 text-white" viewBox="0 0 28 28" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M6.99998 11.2H21L22.4 23.8H5.59998L6.99998 11.2Z"
-                                                        fill="currentColor" stroke="currentColor" stroke-width="2"
-                                                        stroke-linejoin="round"></path>
-                                                    <path
-                                                        d="M9.79999 8.4C9.79999 6.08041 11.6804 4.2 14 4.2C16.3196 4.2 18.2 6.08041 18.2 8.4V12.6C18.2 14.9197 16.3196 16.8 14 16.8C11.6804 16.8 9.79999 14.9197 9.79999 12.6V8.4Z"
-                                                        stroke="currentColor" stroke-width="2"></path>
-                                                </svg>
+                                    <div class="">
+                                        <div class="group bg-white shadow-d p-[10px] rounded-[5px]">
+                                            <div class="flex items-center space-x-2 mb-4">
+                                                <span>
+                                                    <svg width="20" height="20" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M9.866 20c5.449 0 9.866-4.477 9.866-10S15.315 0 9.866 0 0 4.477 0 10s4.417 10 9.866 10z"
+                                                            fill="#31AF68" />
+                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                            d="M6.64 6.506h.006c-.022.027-.018.02-.006 0zm.059 0l.001-.068-.054.068h.053zm0 0l-.004.377c-.001.15-.002.3-.005.444-.012.055.019.074.067.062h.124c.172 0 .358-.001.548.014.237.02.413.21.413.419.028 1.348.025 2.679.023 4.009.018.177-.103.312-.309.311a4.304 4.304 0 01-.563.01c-.073.018-.097.024-.103.104-.023.214-.065.46-.107.704-.012.055-.02.103-.027.15-.007.048-.015.095-.027.15.618.003 1.212.011 1.805.02.008.028.004.05.002.07a18.653 18.653 0 00-.01 1.34c-.012.054-.006.08.073.085.254-.01.508-.022.769-.009.07.006.073-.012.08-.055l.005-.018c-.004-.117-.001-.234.002-.352.002-.118.005-.236.002-.353a6.83 6.83 0 01.002-.352c.003-.118.005-.236.002-.353.23-.005.436-.004.642-.003.04.009.041.027.043.055.001.01.002.023.006.037-.023.422-.016.864-.009 1.305-.012.055-.006.08.073.086.115-.002.238 0 .36.002.123.002.246.004.36.001.128.018.128-.004.128-.097v-.013c0-.208-.003-.423-.005-.637l-.005-.638c.006-.08.048-.116.127-.11.503-.047 1-.118 1.49-.319.375-.145.67-.402.858-.787.15-.324.198-.65.209-1.017a2.01 2.01 0 00-.16-.846 1.594 1.594 0 00-.789-.69 2.071 2.071 0 00-.17-.062 2.073 2.073 0 01-.17-.062.16.16 0 00.062-.031c.01-.008.02-.015.03-.017.175-.122.344-.269.453-.452.144-.245.18-.514.185-.802 0-.417-.123-.804-.433-1.118a2.128 2.128 0 00-.776-.432l-.89-.169c-.08-.006-.11-.025-.104-.104.018-.135.011-.264.005-.392 0-.313-.001-.626-.008-.963-.012.003-.02-.001-.028-.006-.007-.005-.015-.01-.027-.006-.122-.003-.24-.003-.354-.003-.15 0-.297.001-.445-.006-.055-.013-.073.018-.06.067v.312c-.017.343-.016.656-.01.993-.006.01-.011.023-.016.036-.011.026-.022.052-.038.056-.103 0-.212 0-.32.002l-.322.002a.193.193 0 000-.105c0-.208-.003-.422-.005-.637-.002-.215-.004-.43-.004-.638.012-.055.005-.08-.073-.086a7.532 7.532 0 01-.745.004c-.08-.007-.097.024-.103.103.004.221.006.436.008.65l.007.65c-.006.08-.024.11-.102.104-.143-.004-.284-.001-.424.001-.141.003-.282.005-.424.002a9.751 9.751 0 00-.424.001c-.122.002-.243.004-.365.003zm2.687 5.753c.024-.006.054.013.054.013.065 0 .13 0 .196.002.354.003.724.007 1.076-.059.297-.047.563-.114.805-.278.423-.262.464-.924.1-1.25-.17-.167-.394-.241-.619-.316-.482-.132-.998-.11-1.493-.087l-.045.002c-.072-.006-.073.014-.077.078l-.002.02c.007.128.005.253.004.377s-.002.248.004.377c-.006.21-.005.417-.003.63 0 .16.002.323 0 .491zm1.664-3.125c-.091.049-.206.104-.254.116-.281.07-.534.092-.794.114-.1.009-.2.017-.302.029a4.06 4.06 0 01-.143-.004l-.142-.004c-.055-.012-.085-.03-.073-.086.017-.551.016-1.072.008-1.618.006-.08.024-.11.103-.104l.228.003c.302.004.591.007.893.057.242.044.496.137.673.327a.74.74 0 01-.197 1.17z"
+                                                            fill="#fff" />
+                                                    </svg>
+                                                </span>
+                                                <p class="text-sm text-black">Bitcoin Cash</p>
                                             </div>
-
-                                            <div class="mx-5">
-                                                <h4 class="text-2xl font-semibold text-gray-700">215,542</h4>
-                                                <div class="text-gray-500">Available Products</div>
+                                            <h6 class="text-base font-bold text-black mb-2">5.98273917 BCH</h6>
+                                            <p class="text-sm text-black mb-1">$ 4700</p>
+                                            <div class="hidden group-hover:block">
+                                                <div class="flex space-x-[10px] mt-4">
+                                                    <button
+                                                        class="bg-success-alt text-white text-center py-2 rounded text-[10px] font-bold tracking-widest uppercase w-full">Deposit</button>
+                                                    <button
+                                                        class="bg-paragraph text-white text-center py-2 rounded text-[10px] font-bold tracking-widest uppercase w-full">Withdraw</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="">
+                                        <div class="group bg-white shadow-d p-[10px] rounded-[5px]">
+                                            <div class="flex items-center space-x-2 mb-4">
+                                                <span>
+                                                    <svg width="21" height="21" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M10.14 20.33C4.493 20.298-.032 15.843 0 10.314 0 4.754 4.59.3 10.204.33c5.648.032 10.172 4.518 10.14 10.047-.064 5.53-4.62 9.984-10.204 9.953z"
+                                                            fill="#2F80FA" />
+                                                        <path
+                                                            d="M10.054 12.152c1.398.026 2.77.051 4.167.102-.051.204-.103.382-.129.56-.078.256-.155.485-.207.74-.026.127-.078.153-.207.153H7c.232-.892.465-1.733.698-2.625a17.4 17.4 0 00-1.035.407c.103-.382.207-.713.336-1.07 0-.05.078-.076.13-.076.232-.102.491-.179.724-.28.078-.026.155-.103.155-.179l1.088-3.976c.025-.153.077-.204.258-.204h2.355c-.284 1.045-.543 2.09-.828 3.186.415-.178.803-.331 1.243-.484-.052.204-.13.382-.155.56-.052.408-.285.638-.7.74a4.717 4.717 0 00-.543.203.442.442 0 00-.155.153c-.181.689-.362 1.351-.518 2.04v.05z"
+                                                            fill="#fff" />
+                                                    </svg>
+                                                </span>
+                                                <p class="text-sm text-black">Litecoin</p>
+                                            </div>
+                                            <h6 class="text-base font-bold text-black mb-2">1.45903210 LTC</h6>
+                                            <p class="text-sm text-black mb-1">$ 500</p>
+                                            <div class="hidden group-hover:block">
+                                                <div class="flex space-x-[10px] mt-4">
+                                                    <button
+                                                        class="bg-success-alt text-white text-center py-2 rounded text-[10px] font-bold tracking-widest uppercase w-full">Deposit</button>
+                                                    <button
+                                                        class="bg-paragraph text-white text-center py-2 rounded text-[10px] font-bold tracking-widest uppercase w-full">Withdraw</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="">
+                                        <div class="group bg-white shadow-d p-[10px] rounded-[5px]">
+                                            <div class="flex items-center space-x-2 mb-4">
+                                                <span>
+                                                    <svg width="20" height="20" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M9.866 20c5.449 0 9.866-4.477 9.866-10S15.315 0 9.866 0 0 4.477 0 10s4.417 10 9.866 10z"
+                                                            fill="#8A92B2" />
+                                                        <path
+                                                            d="M9.98 4.007v4.62c0 .02-.02.04-.041.04-.144.059-.267.118-.41.178-.185.08-.39.159-.574.258l-.677.297-.554.238c-.225.1-.45.198-.676.297-.185.08-.37.16-.574.258-.144.06-.308.14-.452.199-.02 0-.02.02-.04 0H5.96c.061-.1.123-.179.184-.278.329-.535.677-1.07 1.005-1.606.349-.575.718-1.15 1.066-1.725.329-.536.657-1.071.985-1.587.246-.396.492-.773.717-1.17.041 0 .041-.02.062-.02 0 0-.02 0 0 0z"
+                                                            fill="#fff" />
+                                                        <path opacity=".2"
+                                                            d="M13.958 10.392c-.308.198-.636.376-.943.555-1.005.575-1.99 1.13-2.994 1.705-.02 0-.02.02-.041.02-.02 0-.02-.02-.02-.02v-.06-3.866-.06c0-.02.02-.02.04-.02.082.04.165.08.267.12.246.119.513.218.759.337.225.099.43.198.656.277.225.1.43.199.656.298.185.08.39.158.574.258.185.079.39.158.574.257.144.06.287.14.451.199 0-.02 0 0 .02 0z"
+                                                            fill="#fff" />
+                                                        <path
+                                                            d="M9.98 16.559s-.02 0 0 0c-.02 0-.02 0-.041-.02-.41-.555-.8-1.09-1.21-1.646L7.5 13.227c-.39-.535-.8-1.07-1.19-1.626l-.307-.416c0-.02-.02-.02-.02-.04.02 0 .02.02.04.02.554.318 1.128.635 1.682.952.635.377 1.292.734 1.927 1.11.103.06.226.12.328.179.02 0 .02.02.02.04V16.558zM5.981 10.392s.021 0 0 0c.021 0 .021 0 0 0 0 .02 0 .02 0 0z"
+                                                            fill="#fff" />
+                                                        <path opacity=".598"
+                                                            d="M6.002 10.412c0-.02 0-.02 0 0 .205-.099.41-.178.615-.277l.8-.357c.205-.1.41-.178.615-.278.287-.138.595-.257.882-.396.205-.08.41-.179.615-.258.143-.06.287-.119.43-.198.02 0 .02-.02.041-.02v4.045c-.02.02-.02 0-.04 0-.062-.04-.124-.06-.165-.1l-3.752-2.14c-.02-.02-.041-.02-.041-.02z"
+                                                            fill="#fff" />
+                                                        <path opacity=".4"
+                                                            d="M13.938 11.145c0 .02 0 .02-.02.04-1.19 1.626-2.38 3.232-3.569 4.858-.123.178-.246.337-.369.516v-.02-.04-3.034-.06c.267-.158.533-.316.8-.455l3.137-1.785c0-.02.02-.02.02-.02zM9.98 8.647v-.04-4.54-.04l3.937 6.305c.02.02.041.04.041.06-.082-.04-.164-.08-.266-.119-.103-.04-.206-.1-.308-.139-.062-.02-.123-.06-.205-.08-.103-.039-.226-.098-.328-.138-.062-.02-.123-.06-.185-.08l-.43-.178c-.082-.04-.144-.06-.226-.099-.102-.04-.205-.099-.307-.139-.062-.02-.123-.06-.185-.079l-.43-.178c-.082-.04-.144-.06-.226-.1-.103-.04-.205-.099-.308-.138-.061-.04-.143-.06-.205-.1l-.369-.178z"
+                                                            fill="#fff" />
+                                                    </svg>
+                                                </span>
+                                                <p class="text-sm text-black">Ether</p>
+                                            </div>
+                                            <h6 class="text-base font-bold text-black mb-2">1.45903210 ETH</h6>
+                                            <p class="text-sm text-black mb-1">$ 803</p>
+                                            <div class="hidden group-hover:block">
+                                                <div class="flex space-x-[10px] mt-4">
+                                                    <button
+                                                        class="bg-success-alt text-white text-center py-2 rounded text-[10px] font-bold tracking-widest uppercase w-full">Deposit</button>
+                                                    <button
+                                                        class="bg-paragraph text-white text-center py-2 rounded text-[10px] font-bold tracking-widest uppercase w-full">Withdraw</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="">
+                                        <div class="group bg-white shadow-d p-[10px] rounded-[5px]">
+                                            <div class="flex items-center space-x-2 mb-4">
+                                                <span>
+                                                    <img src="./assets/images/pm-icon.png" alt="" class="w-5 h-5">
+                                                </span>
+                                                <p class="text-sm text-black">Perfect Money</p>
+                                            </div>
+                                            <h6 class="text-base font-bold text-black mb-2">1.45903210 BTC</h6>
+                                            <p class="text-sm text-black mb-1">$ 97</p>
+                                            <div class="hidden group-hover:block">
+                                                <div class="flex space-x-[10px] mt-4">
+                                                    <button
+                                                        class="bg-success-alt text-white text-center py-2 rounded text-[10px] font-bold tracking-widest uppercase w-full">Deposit</button>
+                                                    <button
+                                                        class="bg-paragraph text-white text-center py-2 rounded text-[10px] font-bold tracking-widest uppercase w-full">Withdraw</button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <!-- Balence Card End -->
 
-                            <div class="mt-8">
-
-                            </div>
-
-                            <div class="flex flex-col mt-8">
-                                <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
-                                    <div
-                                        class="align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200">
+                            <!-- Statistic Table Section Start -->
+                            <div class="flex flex-col mt-10">
+                                <h6 class="text-sm font-bold text-black mb-2">Statistic</h6>
+                                <div class="py-2 overflow-x-auto">
+                                    <div class="align-middle inline-block min-w-full overflow-hidden -mx-6">
                                         <table class="min-w-full">
                                             <thead>
                                                 <tr>
                                                     <th
-                                                        class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                                        Name</th>
+                                                        class="px-6 py-2 text-left text-[10px] leading-normal font-bold text-paragraph uppercase tracking-wider whitespace-nowrap">
+                                                        Crypto coin</th>
                                                     <th
-                                                        class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                                        Title</th>
+                                                        class="px-6 py-2 text-left text-[10px] leading-normal font-bold text-paragraph uppercase tracking-wider whitespace-nowrap">
+                                                        Earned Total</th>
                                                     <th
-                                                        class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                                        Status</th>
+                                                        class="px-6 py-2 text-left text-[10px] leading-normal font-bold text-paragraph uppercase tracking-wider whitespace-nowrap">
+                                                        Pending Withdrawal</th>
                                                     <th
-                                                        class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                                        Role</th>
-                                                    <th class="px-6 py-3 border-b border-gray-200 bg-gray-50"></th>
+                                                        class="px-6 py-2 text-left text-[10px] leading-normal font-bold text-paragraph uppercase tracking-wider whitespace-nowrap">
+                                                        Withdrew Total</th>
+                                                    <th
+                                                        class="px-6 py-2 text-left text-[10px] leading-normal font-bold text-paragraph uppercase tracking-wider whitespace-nowrap">
+                                                        Last Deposit</th>
+                                                    <th
+                                                        class="px-6 py-2 text-left text-[10px] leading-normal font-bold text-paragraph uppercase tracking-wider whitespace-nowrap">
+                                                        Last Withdrawal</th>
                                                 </tr>
                                             </thead>
 
-                                            <tbody class="bg-white">
+                                            <tbody class="">
                                                 <tr>
-                                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                                    <td class="px-6 py-4">
                                                         <div class="flex items-center">
-                                                            <div class="flex-shrink-0 h-10 w-10">
-                                                                <img class="h-10 w-10 rounded-full"
-                                                                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80"
-                                                                    alt="">
+                                                            <div class="flex-shrink-0 h-5 w-5">
+                                                                <svg width="20" height="20" fill="none"
+                                                                    xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M9.866 20c5.449 0 9.866-4.477 9.866-10S15.315 0 9.866 0 0 4.477 0 10s4.417 10 9.866 10z"
+                                                                        fill="#E57734" />
+                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                        d="M6.64 6.506h.006c-.022.027-.018.02-.006 0zm.059 0l.001-.068-.054.068h.053zm0 0l-.004.377c-.001.15-.002.3-.005.444-.012.055.019.074.067.062h.124c.172 0 .358-.001.548.014.237.02.413.21.413.419.028 1.348.025 2.679.023 4.009.018.177-.103.312-.309.311a4.304 4.304 0 01-.563.01c-.073.018-.097.024-.103.104-.023.214-.065.46-.107.704-.012.055-.02.103-.027.15-.007.048-.015.095-.027.15.618.003 1.212.011 1.805.02.008.028.004.05.002.07a18.653 18.653 0 00-.01 1.34c-.012.054-.006.08.073.085.254-.01.508-.022.769-.009.07.006.073-.012.08-.055l.005-.018c-.004-.117-.001-.234.002-.352.002-.118.005-.236.002-.353a6.83 6.83 0 01.002-.352c.003-.118.005-.236.002-.353.23-.005.436-.004.642-.003.04.009.041.027.043.055.001.01.002.023.006.037-.023.422-.016.864-.009 1.305-.012.055-.006.08.073.086.115-.002.238 0 .36.002.123.002.246.004.36.001.128.018.128-.004.128-.097v-.013c0-.208-.003-.423-.005-.637l-.005-.638c.006-.08.048-.116.127-.11.503-.047 1-.118 1.49-.319.375-.145.67-.402.858-.787.15-.324.198-.65.209-1.017a2.01 2.01 0 00-.16-.846 1.594 1.594 0 00-.789-.69 2.071 2.071 0 00-.17-.062 2.073 2.073 0 01-.17-.062.16.16 0 00.062-.031c.01-.008.02-.015.03-.017.175-.122.344-.269.453-.452.144-.245.18-.514.185-.802 0-.417-.123-.804-.433-1.118a2.128 2.128 0 00-.776-.432l-.89-.169c-.08-.006-.11-.025-.104-.104.018-.135.011-.264.005-.392 0-.313-.001-.626-.008-.963-.012.003-.02-.001-.028-.006-.007-.005-.015-.01-.027-.006-.122-.003-.24-.003-.354-.003-.15 0-.297.001-.445-.006-.055-.013-.073.018-.06.067v.312c-.017.343-.016.656-.01.993-.006.01-.011.023-.016.036-.011.026-.022.052-.038.056-.103 0-.212 0-.32.002l-.322.002a.193.193 0 000-.105c0-.208-.003-.422-.005-.637-.002-.215-.004-.43-.004-.638.012-.055.005-.08-.073-.086a7.532 7.532 0 01-.745.004c-.08-.007-.097.024-.103.103.004.221.006.436.008.65l.007.65c-.006.08-.024.11-.102.104-.143-.004-.284-.001-.424.001-.141.003-.282.005-.424.002a9.751 9.751 0 00-.424.001c-.122.002-.243.004-.365.003zm2.687 5.753c.024-.006.054.013.054.013.065 0 .13 0 .196.002.354.003.724.007 1.076-.059.297-.047.563-.114.805-.278.423-.262.464-.924.1-1.25-.17-.167-.394-.241-.619-.316-.482-.132-.998-.11-1.493-.087l-.045.002c-.072-.006-.073.014-.077.078l-.002.02c.007.128.005.253.004.377s-.002.248.004.377c-.006.21-.005.417-.003.63 0 .16.002.323 0 .491zm1.664-3.125c-.091.049-.206.104-.254.116-.281.07-.534.092-.794.114-.1.009-.2.017-.302.029a4.06 4.06 0 01-.143-.004l-.142-.004c-.055-.012-.085-.03-.073-.086.017-.551.016-1.072.008-1.618.006-.08.024-.11.103-.104l.228.003c.302.004.591.007.893.057.242.044.496.137.673.327a.74.74 0 01-.197 1.17z"
+                                                                        fill="#fff" />
+                                                                </svg>
                                                             </div>
-
-                                                            <div class="ml-4">
-                                                                <div
-                                                                    class="text-sm leading-5 font-medium text-gray-900">
-                                                                    John Doe
-                                                                </div>
-                                                                <div class="text-sm leading-5 text-gray-500">
-                                                                    john@example.com</div>
+                                                            <div class="ml-2">
+                                                                <p class="text-sm text-black whitespace-nowrap">Bitcoin
+                                                                </p>
                                                             </div>
                                                         </div>
                                                     </td>
-
-                                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                        <div class="text-sm leading-5 text-gray-900">Software Engineer
-                                                        </div>
-                                                        <div class="text-sm leading-5 text-gray-500">Web dev</div>
+                                                    <td class="px-6 py-4">
+                                                        <p class="text-sm text-black whitespace-nowrap">1.45903210</p>
                                                     </td>
-
-                                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                        <span
-                                                            class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Active</span>
+                                                    <td class="px-6 py-4">
+                                                        <p class="text-sm text-black whitespace-nowrap">0</p>
                                                     </td>
-
-                                                    <td
-                                                        class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 text-gray-500">
-                                                        Owner</td>
-
-                                                    <td
-                                                        class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
-                                                        <a href="#"
-                                                            class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                                    <td class="px-6 py-4">
+                                                        <p class="text-sm text-black whitespace-nowrap">0.45903210</p>
+                                                    </td>
+                                                    <td class="px-6 py-4">
+                                                        <p class="text-sm text-black whitespace-nowrap">0.25913214</p>
+                                                    </td>
+                                                    <td class="px-6 py-4">
+                                                        <p class="text-sm text-black whitespace-nowrap">0.75903233</p>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                                    <td class="px-6 py-4">
                                                         <div class="flex items-center">
-                                                            <div class="flex-shrink-0 h-10 w-10">
-                                                                <img class="h-10 w-10 rounded-full"
-                                                                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80"
-                                                                    alt="">
+                                                            <div class="flex-shrink-0 h-5 w-5">
+                                                                <svg width="20" height="20" fill="none"
+                                                                    xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M9.866 20c5.449 0 9.866-4.477 9.866-10S15.315 0 9.866 0 0 4.477 0 10s4.417 10 9.866 10z"
+                                                                        fill="#31AF68" />
+                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                        d="M6.64 6.506h.006c-.022.027-.018.02-.006 0zm.059 0l.001-.068-.054.068h.053zm0 0l-.004.377c-.001.15-.002.3-.005.444-.012.055.019.074.067.062h.124c.172 0 .358-.001.548.014.237.02.413.21.413.419.028 1.348.025 2.679.023 4.009.018.177-.103.312-.309.311a4.304 4.304 0 01-.563.01c-.073.018-.097.024-.103.104-.023.214-.065.46-.107.704-.012.055-.02.103-.027.15-.007.048-.015.095-.027.15.618.003 1.212.011 1.805.02.008.028.004.05.002.07a18.653 18.653 0 00-.01 1.34c-.012.054-.006.08.073.085.254-.01.508-.022.769-.009.07.006.073-.012.08-.055l.005-.018c-.004-.117-.001-.234.002-.352.002-.118.005-.236.002-.353-.003-.116 0-.234.002-.352.003-.118.005-.236.002-.353.23-.005.436-.004.642-.003.04.009.041.027.043.055.001.01.002.023.006.037-.023.422-.016.864-.009 1.305-.012.055-.006.08.073.086.115-.002.238 0 .36.002.123.002.246.004.36.001.128.018.128-.004.128-.097v-.013c0-.208-.003-.423-.005-.637a87.025 87.025 0 01-.005-.638c.006-.08.048-.116.127-.11.503-.047 1-.118 1.49-.319.375-.145.67-.402.858-.787.15-.324.198-.65.209-1.017a2.01 2.01 0 00-.16-.846 1.594 1.594 0 00-.789-.69 2.075 2.075 0 00-.17-.062 2.077 2.077 0 01-.17-.062.16.16 0 00.062-.031c.01-.008.02-.015.03-.017.175-.122.344-.269.453-.452.144-.245.18-.514.185-.803 0-.416-.123-.803-.433-1.117a2.128 2.128 0 00-.776-.432l-.89-.169c-.08-.006-.11-.025-.104-.104.018-.135.011-.264.005-.392 0-.313-.001-.626-.008-.963-.012.003-.02-.001-.028-.006-.007-.005-.015-.01-.027-.006-.122-.003-.24-.003-.354-.003-.15 0-.297.001-.445-.006-.055-.013-.073.018-.06.067v.312c-.017.343-.016.656-.01.993-.006.01-.011.023-.016.036-.011.026-.022.052-.038.056-.103 0-.212 0-.32.002a23.28 23.28 0 01-.322.002.193.193 0 000-.105c0-.208-.003-.422-.005-.637-.002-.215-.004-.43-.004-.638.012-.055.005-.08-.073-.086a7.532 7.532 0 01-.745.004c-.08-.007-.097.024-.103.103.004.221.006.436.008.65l.007.65c-.006.08-.024.11-.102.104-.143-.004-.284-.001-.424.001-.141.003-.282.005-.424.002-.143-.004-.283-.001-.424.001-.122.002-.243.004-.365.003zm2.687 5.753c.024-.006.054.013.054.013.065 0 .13 0 .196.002.354.003.724.007 1.076-.059.297-.047.563-.114.805-.278.423-.262.464-.924.1-1.25-.17-.167-.394-.241-.619-.316-.482-.132-.998-.11-1.493-.087l-.045.002c-.072-.006-.073.014-.077.078l-.002.02c.007.128.005.253.004.377s-.002.248.004.377c-.006.21-.005.417-.003.63 0 .16.002.323 0 .491zm1.664-3.125c-.091.049-.206.104-.254.116-.281.07-.534.092-.794.114-.1.009-.2.017-.302.029-.052 0-.097-.002-.143-.004l-.142-.004c-.055-.012-.085-.03-.073-.086.017-.551.016-1.072.008-1.618.006-.08.024-.11.103-.104l.228.003c.302.004.591.007.893.057.242.044.496.137.673.327a.74.74 0 01-.197 1.17z"
+                                                                        fill="#fff" />
+                                                                </svg>
                                                             </div>
-
-                                                            <div class="ml-4">
-                                                                <div
-                                                                    class="text-sm leading-5 font-medium text-gray-900">
-                                                                    John Doe
-                                                                </div>
-                                                                <div class="text-sm leading-5 text-gray-500">
-                                                                    john@example.com</div>
+                                                            <div class="ml-2">
+                                                                <p class="text-sm text-black whitespace-nowrap">Bitcoin
+                                                                    Cash</p>
                                                             </div>
                                                         </div>
                                                     </td>
-
-                                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                        <div class="text-sm leading-5 text-gray-900">Software Engineer
-                                                        </div>
-                                                        <div class="text-sm leading-5 text-gray-500">Web dev</div>
+                                                    <td class="px-6 py-4">
+                                                        <p class="text-sm text-black whitespace-nowrap">5.98273917</p>
                                                     </td>
-
-                                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                        <span
-                                                            class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Active</span>
+                                                    <td class="px-6 py-4">
+                                                        <p class="text-sm text-black whitespace-nowrap">0.34091829</p>
                                                     </td>
-
-                                                    <td
-                                                        class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 text-gray-500">
-                                                        Owner</td>
-
-                                                    <td
-                                                        class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
-                                                        <a href="#"
-                                                            class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                                    <td class="px-6 py-4">
+                                                        <p class="text-sm text-black whitespace-nowrap">0</p>
+                                                    </td>
+                                                    <td class="px-6 py-4">
+                                                        <p class="text-sm text-black whitespace-nowrap">5.98273917</p>
+                                                    </td>
+                                                    <td class="px-6 py-4">
+                                                        <p class="text-sm text-black whitespace-nowrap">0</p>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                                    <td class="px-6 py-4">
                                                         <div class="flex items-center">
-                                                            <div class="flex-shrink-0 h-10 w-10">
-                                                                <img class="h-10 w-10 rounded-full"
-                                                                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80"
-                                                                    alt="">
+                                                            <div class="flex-shrink-0 h-5 w-5">
+                                                                <svg width="21" height="20" fill="none"
+                                                                    xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M10.14 20C4.493 19.968-.032 15.513 0 9.984 0 4.424 4.59-.03 10.204 0c5.648.032 10.172 4.518 10.14 10.047-.064 5.53-4.62 9.984-10.204 9.953z"
+                                                                        fill="#2F80FA" />
+                                                                    <path
+                                                                        d="M10.054 11.822c1.398.026 2.77.051 4.167.102-.051.204-.103.382-.129.56-.078.255-.155.485-.207.74-.026.127-.078.153-.207.153H7c.232-.892.465-1.733.698-2.625-.362.127-.673.255-1.035.407.103-.382.207-.713.336-1.07 0-.05.078-.076.13-.076.232-.102.491-.179.724-.28.078-.026.155-.103.155-.18l1.088-3.975c.025-.153.077-.204.258-.204h2.355c-.284 1.045-.543 2.09-.828 3.186a17.88 17.88 0 011.243-.484c-.052.204-.13.382-.155.56-.052.408-.285.638-.7.74a4.717 4.717 0 00-.543.203.443.443 0 00-.155.153c-.181.688-.362 1.351-.518 2.04v.05z"
+                                                                        fill="#fff" />
+                                                                </svg>
                                                             </div>
-
-                                                            <div class="ml-4">
-                                                                <div
-                                                                    class="text-sm leading-5 font-medium text-gray-900">
-                                                                    John Doe
-                                                                </div>
-                                                                <div class="text-sm leading-5 text-gray-500">
-                                                                    john@example.com</div>
+                                                            <div class="ml-2">
+                                                                <p class="text-sm text-black whitespace-nowrap">
+                                                                    Litecoin</p>
                                                             </div>
                                                         </div>
                                                     </td>
-
-                                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                        <div class="text-sm leading-5 text-gray-900">Software Engineer
-                                                        </div>
-                                                        <div class="text-sm leading-5 text-gray-500">Web dev</div>
+                                                    <td class="px-6 py-4">
+                                                        <p class="text-sm text-black whitespace-nowrap">1.45903210</p>
                                                     </td>
-
-                                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                        <span
-                                                            class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Active</span>
+                                                    <td class="px-6 py-4">
+                                                        <p class="text-sm text-black whitespace-nowrap">0</p>
                                                     </td>
-
-                                                    <td
-                                                        class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 text-gray-500">
-                                                        Owner</td>
-
-                                                    <td
-                                                        class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
-                                                        <a href="#"
-                                                            class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                                    <td class="px-6 py-4">
+                                                        <p class="text-sm text-black whitespace-nowrap">0.45903210</p>
+                                                    </td>
+                                                    <td class="px-6 py-4">
+                                                        <p class="text-sm text-black whitespace-nowrap">0.25913214</p>
+                                                    </td>
+                                                    <td class="px-6 py-4">
+                                                        <p class="text-sm text-black whitespace-nowrap">0.75903233</p>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                                    <td class="px-6 py-4">
                                                         <div class="flex items-center">
-                                                            <div class="flex-shrink-0 h-10 w-10">
-                                                                <img class="h-10 w-10 rounded-full"
-                                                                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80"
-                                                                    alt="">
+                                                            <div class="flex-shrink-0 h-5 w-5">
+                                                                <svg width="20" height="20" fill="none"
+                                                                    xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M9.866 20c5.449 0 9.866-4.477 9.866-10S15.315 0 9.866 0 0 4.477 0 10s4.417 10 9.866 10z"
+                                                                        fill="#8A92B2" />
+                                                                    <path
+                                                                        d="M9.98 4.007v4.62c0 .02-.02.04-.041.04-.144.059-.267.118-.41.178-.185.08-.39.159-.574.258l-.677.297-.554.238c-.225.1-.45.198-.676.297-.185.08-.37.16-.574.258-.144.06-.308.14-.452.199-.02 0-.02.02-.04 0H5.96c.061-.1.123-.179.184-.278.329-.535.677-1.07 1.005-1.606.349-.575.718-1.15 1.066-1.725.329-.536.657-1.071.985-1.587.246-.396.492-.773.717-1.17.041 0 .041-.02.062-.02 0 0-.02 0 0 0z"
+                                                                        fill="#fff" />
+                                                                    <path opacity=".2"
+                                                                        d="M13.958 10.392c-.308.198-.636.376-.943.555-1.005.575-1.99 1.13-2.994 1.705-.02 0-.02.02-.041.02-.02 0-.02-.02-.02-.02v-.06-3.866-.06c0-.02.02-.02.04-.02.082.04.165.08.267.12.246.119.513.218.759.337.225.099.43.198.656.277.225.1.43.199.656.298.185.08.39.158.574.258.185.079.39.158.574.257.144.06.287.14.451.199 0-.02 0 0 .02 0z"
+                                                                        fill="#fff" />
+                                                                    <path
+                                                                        d="M9.98 16.559s-.02 0 0 0c-.02 0-.02 0-.041-.02-.41-.555-.8-1.09-1.21-1.646L7.5 13.227c-.39-.535-.8-1.07-1.19-1.626l-.307-.416c0-.02-.02-.02-.02-.04.02 0 .02.02.04.02.554.318 1.128.635 1.682.952.635.377 1.292.734 1.927 1.11.103.06.226.12.328.179.02 0 .02.02.02.04V16.558zM5.981 10.392s.021 0 0 0c.021 0 .021 0 0 0 0 .02 0 .02 0 0z"
+                                                                        fill="#fff" />
+                                                                    <path opacity=".598"
+                                                                        d="M6.002 10.412c0-.02 0-.02 0 0 .205-.099.41-.178.615-.277l.8-.357c.205-.1.41-.178.615-.278.287-.138.595-.257.882-.396.205-.08.41-.179.615-.258.143-.06.287-.119.43-.198.02 0 .02-.02.041-.02v4.045c-.02.02-.02 0-.04 0-.062-.04-.124-.06-.165-.1l-3.752-2.14c-.02-.02-.041-.02-.041-.02z"
+                                                                        fill="#fff" />
+                                                                    <path opacity=".4"
+                                                                        d="M13.937 11.145c0 .02 0 .02-.02.04-1.19 1.626-2.379 3.232-3.568 4.858-.123.178-.246.337-.369.516v-.02-.04-3.034-.06c.266-.158.533-.316.8-.455l3.137-1.785c0-.02.02-.02.02-.02zM9.98 8.647v-.04-4.54-.04l3.937 6.305c.02.02.04.04.04.06-.081-.04-.163-.08-.266-.119-.102-.04-.205-.1-.307-.139-.062-.02-.123-.06-.205-.08-.103-.039-.226-.098-.328-.138-.062-.02-.123-.06-.185-.08l-.43-.178c-.083-.04-.144-.06-.226-.099-.103-.04-.205-.099-.308-.139-.061-.02-.123-.06-.184-.079l-.43-.178c-.083-.04-.144-.06-.226-.1-.103-.04-.205-.099-.308-.138-.061-.04-.143-.06-.205-.1l-.369-.178z"
+                                                                        fill="#fff" />
+                                                                </svg>
                                                             </div>
-
-                                                            <div class="ml-4">
-                                                                <div
-                                                                    class="text-sm leading-5 font-medium text-gray-900">
-                                                                    John Doe
-                                                                </div>
-                                                                <div class="text-sm leading-5 text-gray-500">
-                                                                    john@example.com</div>
+                                                            <div class="ml-2">
+                                                                <p class="text-sm text-black whitespace-nowrap">Ether
+                                                                </p>
                                                             </div>
                                                         </div>
                                                     </td>
-
-                                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                        <div class="text-sm leading-5 text-gray-900">Software Engineer
-                                                        </div>
-                                                        <div class="text-sm leading-5 text-gray-500">Web dev</div>
+                                                    <td class="px-6 py-4">
+                                                        <p class="text-sm text-black whitespace-nowrap">5.98273917</p>
                                                     </td>
-
-                                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                        <span
-                                                            class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Active</span>
+                                                    <td class="px-6 py-4">
+                                                        <p class="text-sm text-black whitespace-nowrap">0.34091829</p>
                                                     </td>
-
-                                                    <td
-                                                        class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 text-gray-500">
-                                                        Owner</td>
-
-                                                    <td
-                                                        class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
-                                                        <a href="#"
-                                                            class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                                    <td class="px-6 py-4">
+                                                        <p class="text-sm text-black whitespace-nowrap">0 </p>
+                                                    </td>
+                                                    <td class="px-6 py-4">
+                                                        <p class="text-sm text-black whitespace-nowrap">5.98273917</p>
+                                                    </td>
+                                                    <td class="px-6 py-4">
+                                                        <p class="text-sm text-black whitespace-nowrap">0</p>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                                    <td class="px-6 py-4">
                                                         <div class="flex items-center">
-                                                            <div class="flex-shrink-0 h-10 w-10">
-                                                                <img class="h-10 w-10 rounded-full"
-                                                                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80"
-                                                                    alt="">
+                                                            <div class="flex-shrink-0 h-5 w-5">
+                                                                <svg width="21" height="20" fill="none"
+                                                                    xmlns="http://www.w3.org/2000/svg">
+                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                        d="M0 9.984C-.032 15.514 4.493 19.968 10.14 20c5.584.031 10.14-4.424 10.204-9.953C20.376 4.518 15.852.032 10.204 0 4.59-.03 0 4.423 0 9.984zm10.13-3.486c0-.8.406-1.558 1.092-1.978.322-.21.727-.294 1.091-.292.364 0 .769.082 1.092.294A2.314 2.314 0 0114.496 6.5c0 .8-.406 1.558-1.092 1.977-.365.212-.81.294-1.213.294-.483 0-.848.377-.848.883 0 .63.482.882.848.882.444 0 .848.082 1.213.294a2.312 2.312 0 011.092 1.978c0 .8-.406 1.558-1.092 1.978a2.05 2.05 0 01-2.184 0 2.311 2.311 0 01-1.092-1.978c0-.42.12-.84.324-1.22.201-.42.079-.968-.324-1.219-.565-.337-1.01.043-1.172.337-.2.379-.483.714-.848.926-.688.42-1.498.42-2.183 0a2.31 2.31 0 01-1.093-1.978c0-.8.407-1.56 1.094-1.98a2.051 2.051 0 012.184 0c.363.251.648.588.889.925.241.42.769.588 1.172.337.565-.294.486-.882.324-1.219-.204-.376-.365-.8-.365-1.22z"
+                                                                        fill="#2FC9FA" />
+                                                                </svg>
                                                             </div>
-
-                                                            <div class="ml-4">
-                                                                <div
-                                                                    class="text-sm leading-5 font-medium text-gray-900">
-                                                                    John Doe
-                                                                </div>
-                                                                <div class="text-sm leading-5 text-gray-500">
-                                                                    john@example.com</div>
+                                                            <div class="ml-2">
+                                                                <p class="text-sm text-black whitespace-nowrap">Ripple
+                                                                </p>
                                                             </div>
                                                         </div>
                                                     </td>
-
-                                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                        <div class="text-sm leading-5 text-gray-900">Software Engineer
-                                                        </div>
-                                                        <div class="text-sm leading-5 text-gray-500">Web dev</div>
+                                                    <td class="px-6 py-4">
+                                                        <p class="text-sm text-black whitespace-nowrap">1.45903210</p>
                                                     </td>
-
-                                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                        <span
-                                                            class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Active</span>
+                                                    <td class="px-6 py-4">
+                                                        <p class="text-sm text-black whitespace-nowrap">0</p>
                                                     </td>
-
-                                                    <td
-                                                        class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 text-gray-500">
-                                                        Owner</td>
-
-                                                    <td
-                                                        class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
-                                                        <a href="#"
-                                                            class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                                    <td class="px-6 py-4">
+                                                        <p class="text-sm text-black whitespace-nowrap">0.45903210</p>
                                                     </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                        <div class="flex items-center">
-                                                            <div class="flex-shrink-0 h-10 w-10">
-                                                                <img class="h-10 w-10 rounded-full"
-                                                                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80"
-                                                                    alt="">
-                                                            </div>
-
-                                                            <div class="ml-4">
-                                                                <div
-                                                                    class="text-sm leading-5 font-medium text-gray-900">
-                                                                    John Doe
-                                                                </div>
-                                                                <div class="text-sm leading-5 text-gray-500">
-                                                                    john@example.com</div>
-                                                            </div>
-                                                        </div>
+                                                    <td class="px-6 py-4">
+                                                        <p class="text-sm text-black whitespace-nowrap">0.25913214</p>
                                                     </td>
-
-                                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                        <div class="text-sm leading-5 text-gray-900">Software Engineer
-                                                        </div>
-                                                        <div class="text-sm leading-5 text-gray-500">Web dev</div>
-                                                    </td>
-
-                                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                        <span
-                                                            class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Active</span>
-                                                    </td>
-
-                                                    <td
-                                                        class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 text-gray-500">
-                                                        Owner</td>
-
-                                                    <td
-                                                        class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
-                                                        <a href="#"
-                                                            class="text-indigo-600 hover:text-indigo-900">Edit</a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                        <div class="flex items-center">
-                                                            <div class="flex-shrink-0 h-10 w-10">
-                                                                <img class="h-10 w-10 rounded-full"
-                                                                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80"
-                                                                    alt="">
-                                                            </div>
-
-                                                            <div class="ml-4">
-                                                                <div
-                                                                    class="text-sm leading-5 font-medium text-gray-900">
-                                                                    John Doe
-                                                                </div>
-                                                                <div class="text-sm leading-5 text-gray-500">
-                                                                    john@example.com</div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-
-                                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                        <div class="text-sm leading-5 text-gray-900">Software Engineer
-                                                        </div>
-                                                        <div class="text-sm leading-5 text-gray-500">Web dev</div>
-                                                    </td>
-
-                                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                        <span
-                                                            class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Active</span>
-                                                    </td>
-
-                                                    <td
-                                                        class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 text-gray-500">
-                                                        Owner</td>
-
-                                                    <td
-                                                        class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
-                                                        <a href="#"
-                                                            class="text-indigo-600 hover:text-indigo-900">Edit</a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                        <div class="flex items-center">
-                                                            <div class="flex-shrink-0 h-10 w-10">
-                                                                <img class="h-10 w-10 rounded-full"
-                                                                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80"
-                                                                    alt="">
-                                                            </div>
-
-                                                            <div class="ml-4">
-                                                                <div
-                                                                    class="text-sm leading-5 font-medium text-gray-900">
-                                                                    John Doe
-                                                                </div>
-                                                                <div class="text-sm leading-5 text-gray-500">
-                                                                    john@example.com</div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-
-                                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                        <div class="text-sm leading-5 text-gray-900">Software Engineer
-                                                        </div>
-                                                        <div class="text-sm leading-5 text-gray-500">Web dev</div>
-                                                    </td>
-
-                                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                        <span
-                                                            class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Active</span>
-                                                    </td>
-
-                                                    <td
-                                                        class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 text-gray-500">
-                                                        Owner</td>
-
-                                                    <td
-                                                        class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
-                                                        <a href="#"
-                                                            class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                                    <td class="px-6 py-4">
+                                                        <p class="text-sm text-black whitespace-nowrap">0.75903233</p>
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -618,9 +635,13 @@
                                     </div>
                                 </div>
                             </div>
+                            <!-- Statistic Table Section End -->
+
                         </div>
                     </main>
                 </div>
+                <!-- Main Content End -->
+
             </div>
             <!-- Content Section End -->
 
