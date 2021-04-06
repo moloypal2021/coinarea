@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "postcss tailwind.css -o public/assets/css/tailwind.css --watch"
   },
   "repository": {
     "type": "git",
@@ -18,8 +18,10 @@
   },
   "homepage": "https://github.com/moloypal2021/coinarea#readme",
   "devDependencies": {
+    "@tailwindcss/jit": "^0.1.18",
     "autoprefixer": "^10.2.5",
     "postcss": "^8.2.9",
+    "postcss-cli": "^8.3.1",
     "tailwindcss": "^2.1.1"
   }
 }

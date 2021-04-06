@@ -1,5 +1,9 @@
-/* ./your-css-folder/styles.css */
-
+@import url('http://fonts.cdnfonts.com/css/avenir-next-lt-pro');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer base {
+    body {
+        font-family: 'Avenir Next LT Pro', sans-serif;
+    }
+}
