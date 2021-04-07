@@ -260,7 +260,7 @@
                                             Make Deposit</h3>
                                         <p class="sm:text-sm text-xs font-bold text-mute">Step 1</p>
                                     </div>
-                                    <div class="sm:w-[50px] w-7 h-3 border-b border-mute"></div>
+                                    <div class="xl:w-[50px] md:w-10 w-7 h-3 border-b border-mute"></div>
                                     <div class="">
                                         <h3
                                             class="text-paragraph sm:text-sm text-xs font-bold uppercase tracking-wide sm:tracking-[0.2em] mb-0.5">
@@ -287,66 +287,75 @@
                             <h4 class="text-xl text-black font-bold">Deposit Confirmation</h4>
 
                             <!-- Balence Card Start -->
-                            <div class="border border-mute rounded p-5 mt-6 max-w-[854px]">
-                                <div class="grid lg:grid-cols-3 sm:grid-cols-2 gap-8">
-                                    <div class="">
-                                        <p class="text-sm text-paragraph font-medium mb-0.5">Deposit amount:</p>
-                                        <p class="text-sm text-black font-bold mb-0.5">1.23456789 BTC</p>
-                                        <p class="text-xs text-paragraph font-bold mb-7">12389 USD</p>
-                                        <p class="text-sm text-paragraph font-medium mb-0.5">Send:</p>
-                                        <p class="text-sm text-black font-bold mb-0.5">1.23456789 BTC</p>
-                                        <p class="text-xs text-info underline mb-5">sa7d6a2s6d7dada09dsw3d4qwd65ds6</p>
-                                        <p class="text-sm text-paragraph font-medium mb-0.5">Account Status:</p>
-                                        <p class="text-sm text-warning font-bold mb-0.5">Pending Transfer</p>
-                                    </div>
-                                    <div class="">
-                                        <p class="text-sm text-paragraph font-medium mb-2">Scan to Pay:</p>
-                                        <img src="./assets/images/qr.png" alt="" class="w-[110px] h-[110px]">
-                                    </div>
-                                    <div class="">
-                                        <p class="text-sm text-paragraph font-medium mb-2">Valid:</p>
-                                        <div class="flex space-x-5">
-                                            <div class="w-[60px]">
-                                                <div class="relative">
-                                                    <svg class="transform -rotate-90" width="60" height="60"
-                                                        viewBox="0 0 120 120">
-                                                        <circle class="stroke-current text-[#e6e6e6]" fill="none"
-                                                            cx="60" cy="60" r="54" stroke-width="12" />
-                                                        <circle class="value stroke-current text-[#22C062]" fill="none"
-                                                            cx="60" cy="60" r="54" stroke-width="12" />
-                                                    </svg>
-                                                    <span
-                                                        class="text-xl font-bold text-black absolute inset-0 flex items-center justify-center"
-                                                        id="minute">
-                                                        14</span>
+                            <div class="max-w-[854px]">
+                                <div class="border border-mute rounded p-5 mt-6 w-full">
+                                    <div class="grid lg:grid-cols-3 grid-cols-2 gap-8">
+                                        <div class="">
+                                            <p class="text-sm text-paragraph font-medium mb-0.5">Deposit amount:</p>
+                                            <p class="text-sm text-black font-bold mb-0.5">1.23456789 BTC</p>
+                                            <p class="text-xs text-paragraph font-bold mb-7">12389 USD</p>
+                                            <p class="text-sm text-paragraph font-medium mb-0.5">Send:</p>
+                                            <p class="text-sm text-black font-bold mb-0.5">1.23456789 BTC</p>
+                                            <p class="text-xs text-info underline mb-5">sa7d6a2s6d7dada09dsw3d4qwd65ds6
+                                            </p>
+                                            <p class="text-sm text-paragraph font-medium mb-0.5">Account Status:</p>
+                                            <p class="text-sm text-warning font-bold mb-0.5">Pending Transfer</p>
+                                        </div>
+                                        <div class="">
+                                            <p class="text-sm text-paragraph font-medium mb-2">Scan to Pay:</p>
+                                            <img src="./assets/images/qr.png" alt=""
+                                                class="w-24 sm:w-[110px] h-24 sm:h-[110px]">
+                                        </div>
+                                        <div class="">
+                                            <p class="text-sm text-paragraph font-medium mb-2">Valid:</p>
+                                            <div class="flex space-x-5" x-data="timer()" x-init="init()">
+                                                <div class="w-[60px]">
+                                                    <div class="relative">
+                                                        <svg class="transform -rotate-90" width="60" height="60"
+                                                            viewBox="0 0 120 120">
+                                                            <circle class="stroke-current text-[#e6e6e6]" fill="none"
+                                                                cx="60" cy="60" r="54" stroke-width="12" />
+                                                            <circle class="stroke-current text-[#22C062]"
+                                                                id="minuteValue" fill="none" cx="60" cy="60" r="54"
+                                                                stroke-width="12" />
+                                                        </svg>
+                                                        <span
+                                                            class="text-xl font-bold text-black absolute inset-0 flex items-center justify-center"
+                                                            id="minute">
+                                                        </span>
+                                                    </div>
+                                                    <p class="text-xs font-medium text-black text-center" id="time">
+                                                        Minutes
+                                                    </p>
                                                 </div>
-                                                <!-- <input id="control" type="range" value="60" /> -->
-                                                <p class="text-xs font-medium text-black text-center" id="time">Minutes
-                                                </p>
-                                            </div>
-                                            <div class="w-[60px]">
-                                                <div class="relative">
-                                                    <svg class="transform -rotate-90" width="60" height="60"
-                                                        viewBox="0 0 120 120">
-                                                        <circle class="stroke-current text-[#e6e6e6]" fill="none"
-                                                            cx="60" cy="60" r="54" stroke-width="12" />
-                                                        <circle class="value2 stroke-current text-[#FBAD17]" fill="none"
-                                                            cx="60" cy="60" r="54" stroke-width="12" />
-                                                    </svg>
-                                                    <span
-                                                        class="text-xl font-bold text-black absolute inset-0 flex items-center justify-center"
-                                                        id="seconds">
-                                                    </span>
+                                                <div class="w-[60px]">
+                                                    <div class="relative">
+                                                        <svg class="transform -rotate-90" width="60" height="60"
+                                                            viewBox="0 0 120 120">
+                                                            <circle class="stroke-current text-[#e6e6e6]" fill="none"
+                                                                cx="60" cy="60" r="54" stroke-width="12" />
+                                                            <circle class="stroke-current text-[#FBAD17]"
+                                                                id="secondsValue" fill="none" cx="60" cy="60" r="54"
+                                                                stroke-width="12" />
+                                                        </svg>
+                                                        <span
+                                                            class="text-xl font-bold text-black absolute inset-0 flex items-center justify-center"
+                                                            id="seconds">
+                                                        </span>
+                                                    </div>
+                                                    <p class="text-xs font-medium text-black text-center">
+                                                        Second
+                                                    </p>
                                                 </div>
-                                                <!-- <input id="control" type="range" value="60" /> -->
-                                                <p class="text-xs font-medium text-black text-center">
-                                                    Second
-                                                </p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
+                                <div class="flex justify-end mt-5">
+                                    <button
+                                        class="text-sm font-bold text-danger border border-danger rounded py-3 px-5">Cancel
+                                        and return</button>
+                                </div>
                             </div>
                             <!-- Balence Card End -->
 
@@ -363,57 +372,62 @@
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 
     <script>
-        var fiveMinutes, mint, sec;
-        window.onload = function () {
-            this.fiveMinutes = 60 * 14;
-            this.mint = document.querySelector('#minute');
-            this.sec = document.querySelector('#seconds');
-            startTimer(this.fiveMinutes, this.mint, this.sec);
 
-        };
-        function startTimer(duration, mint, sec) {
-            var timer = duration, minutes, seconds;
-            setInterval(function () {
-                minutes = parseInt(timer / 60, 10);
-                seconds = parseInt(timer % 60, 10);
+        function timer() {
+            return {
+                timeStart: 15,
+                duration: null,
+                displayMin: null,
+                displaySec: null,
+                minuteValue: null,
+                secondValue: null,
+                CIRCUMFERENCE: 2 * Math.PI * 54,
+                init() {
+                    // For Timer
+                    this.duration = 60 * this.timeStart;
+                    this.displayMin = document.querySelector('#minute');
+                    this.displaySec = document.querySelector('#seconds');
+                    this.startTimer(this.duration, this.displayMin, this.displaySec);
 
-                minutes = minutes < 10 ? "0" + minutes : minutes;
-                seconds = seconds < 10 ? "0" + seconds : seconds;
+                    // For Progress Circle
+                    this.minuteValue = document.querySelector('#minuteValue');
+                    this.secondValue = document.querySelector('#secondsValue');
+                    var CIRCUMFERENCE = 2 * Math.PI * 54;
+                    this.minuteValue.style.strokeDasharray = CIRCUMFERENCE;
+                    this.secondValue.style.strokeDasharray = CIRCUMFERENCE;
+                },
+                startTimer(duration, mint, sec) {
+                    // Timer
+                    var timers = duration, minutes, seconds;
+                    var timeStart = this.timeStart - 1; // for progress
+                    setInterval(function () {
+                        minutes = parseInt(timers / 60, 10);
+                        seconds = parseInt(timers % 60, 10);
+                        minutes = minutes < 10 ? "0" + minutes : minutes;
+                        seconds = seconds < 10 ? "0" + seconds : seconds;
 
-                mint.textContent = minutes;
-                var second = sec.textContent = seconds;
+                        var min = mint.textContent = minutes;
+                        var secs = sec.textContent = seconds;
 
-                if (--timer < 0) {
-                    timer = duration;
-                }
-                progress(second);
+                        if (--timers < 0) {
+                            timers = duration;
+                        }
 
-            }, 1000);
+                        // For Progress Circle
+                        var CIRCUMFERENCE = 2 * Math.PI * 54;
+                        this.minuteValue = document.querySelector('#minuteValue');
+                        this.secondValue = document.querySelector('#secondsValue');
+                        var minProgress = min / timeStart;
+                        var secProgress = secs / 60;
+                        var minDashoffset = CIRCUMFERENCE * (1 - minProgress);
+                        var secDashoffset = CIRCUMFERENCE * (1 - secProgress);
+                        this.minuteValue.style.strokeDashoffset = -minDashoffset;
+                        this.secondValue.style.strokeDashoffset = -secDashoffset;
+                    }, 1000);
+                },
+            }
         }
 
-
-
-        var control = document.getElementById('control');
-        var progressValue = document.querySelector('.value2');
-
-        var RADIUS = 54;
-        var CIRCUMFERENCE = 2 * Math.PI * RADIUS;
-
-        function progress(value) {
-            var progress = value / 60;
-            var dashoffset = CIRCUMFERENCE * (1 - progress);
-
-            // console.log('progress:', value + '%', '|', 'offset:', dashoffset)
-            console.log(dashoffset)
-            progressValue.style.strokeDashoffset = dashoffset;
-        }
-
-        // control.addEventListener('input', function (event) {
-        //     progress(event.target.valueAsNumber);
-        // });
-
-        progressValue.style.strokeDasharray = CIRCUMFERENCE;
-        progress(60);
     </script>
 </body>
 
