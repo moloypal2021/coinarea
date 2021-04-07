@@ -301,8 +301,12 @@
                                             <div
                                                 class="flex items-center justify-between max-w-[180px] sm:max-w-xs mb-2">
                                                 <p class="text-xs text-paragraph">Date of creation:</p>
-                                                <button
-                                                    class="border border-border focus:bg-success-alt focus:text-white focus:outline-none text-paragraph text-center px-2 py-1.5 rounded text-[10px] font-bold tracking-widest uppercase">off</button>
+                                                <div class="" x-data="{isOn: false}">
+                                                    <button
+                                                        class="focus:outline-none text-center w-[50px] py-1.5 rounded text-[10px] font-bold tracking-widest uppercase"
+                                                        :class="isOn ? 'text-white bg-success-alt border border-transparent' : 'border border-border text-paragraph'"
+                                                        @click="isOn = !isOn" x-text="isOn ? 'ON' : 'OFF' ">off</button>
+                                                </div>
                                             </div>
                                             <p class="text-xs text-paragraph mb-0.5">Your profit:</p>
                                             <p class="text-sm text-black mb-4">1% to 1.8%</p>
@@ -336,8 +340,12 @@
                                             <div
                                                 class="flex items-center justify-between max-w-[180px] sm:max-w-xs mb-2">
                                                 <p class="text-xs text-paragraph">Date of creation:</p>
-                                                <button
-                                                    class="bg-success-alt text-white focus:outline-none text-center px-4 py-2 rounded text-[10px] font-bold tracking-widest uppercase">on</button>
+                                                <div class="" x-data="{isOn: true}">
+                                                    <button
+                                                        class="focus:outline-none text-center w-[50px] py-1.5 rounded text-[10px] font-bold tracking-widest uppercase"
+                                                        :class="isOn ? 'text-white bg-success-alt border border-transparent' : 'border border-border text-paragraph'"
+                                                        @click="isOn = !isOn" x-text="isOn ? 'ON' : 'OFF' ">off</button>
+                                                </div>
                                             </div>
                                             <p class="text-xs text-paragraph mb-0.5">Your profit:</p>
                                             <p class="text-sm text-black mb-4">1% to 1.8%</p>
@@ -371,8 +379,12 @@
                                             <div
                                                 class="flex items-center justify-between max-w-[180px] sm:max-w-xs mb-2">
                                                 <p class="text-xs text-paragraph">Date of creation:</p>
-                                                <button
-                                                    class="border border-border focus:bg-success-alt focus:text-white focus:outline-none text-paragraph text-center px-2 py-1.5 rounded text-[10px] font-bold tracking-widest uppercase">off</button>
+                                                <div class="" x-data="{isOn: false}">
+                                                    <button
+                                                        class="focus:outline-none text-center w-[50px] py-1.5 rounded text-[10px] font-bold tracking-widest uppercase"
+                                                        :class="isOn ? 'text-white bg-success-alt border border-transparent' : 'border border-border text-paragraph'"
+                                                        @click="isOn = !isOn" x-text="isOn ? 'ON' : 'OFF' ">off</button>
+                                                </div>
                                             </div>
                                             <p class="text-xs text-paragraph mb-0.5">Your profit:</p>
                                             <p class="text-sm text-black mb-4">1% to 1.8%</p>
@@ -418,8 +430,12 @@
                                             <div
                                                 class="flex items-center justify-between max-w-[180px] sm:max-w-xs mb-2">
                                                 <p class="text-xs text-paragraph">Date of creation:</p>
-                                                <button
-                                                    class="border border-border focus:bg-success-alt focus:text-white focus:outline-none text-paragraph text-center px-2 py-1.5 rounded text-[10px] font-bold tracking-widest uppercase">off</button>
+                                                <div class="" x-data="{isOn: false}">
+                                                    <button
+                                                        class="focus:outline-none text-center w-[50px] py-1.5 rounded text-[10px] font-bold tracking-widest uppercase"
+                                                        :class="isOn ? 'text-white bg-success-alt border border-transparent' : 'border border-border text-paragraph'"
+                                                        @click="isOn = !isOn" x-text="isOn ? 'ON' : 'OFF' ">off</button>
+                                                </div>
                                             </div>
                                             <p class="text-xs text-paragraph mb-0.5">Your profit:</p>
                                             <p class="text-sm text-black mb-4">1% to 1.8%</p>
@@ -444,8 +460,12 @@
                                             <div
                                                 class="flex items-center justify-between max-w-[180px] sm:max-w-xs mb-2">
                                                 <p class="text-xs text-paragraph">Date of creation:</p>
-                                                <button
-                                                    class="border border-border focus:bg-success-alt focus:text-white focus:outline-none text-paragraph text-center px-2 py-1.5 rounded text-[10px] font-bold tracking-widest uppercase">off</button>
+                                                <div class="" x-data="{isOn: false}">
+                                                    <button
+                                                        class="focus:outline-none text-center w-[50px] py-1.5 rounded text-[10px] font-bold tracking-widest uppercase"
+                                                        :class="isOn ? 'text-white bg-success-alt border border-transparent' : 'border border-border text-paragraph'"
+                                                        @click="isOn = !isOn" x-text="isOn ? 'ON' : 'OFF' ">off</button>
+                                                </div>
                                             </div>
                                             <p class="text-xs text-paragraph mb-0.5">Your profit:</p>
                                             <p class="text-sm text-black mb-4">1% to 1.8%</p>

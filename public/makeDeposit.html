@@ -252,8 +252,23 @@
                     <main class="flex-1 overflow-x-hidden overflow-y-auto bg-white">
                         <div class="container mx-auto px-6 px-6 lg:pr-10 py-5">
                             <div
-                                class="flex sm:flex-row flex-col justify-between sm:items-center space-y-2 sm:space-y-0 mb-5">
-                                <h3 class="text-paragraph text-sm font-bold uppercase tracking-[0.2em]">Dashboard</h3>
+                                class="flex md:flex-row flex-col justify-between md:items-center space-y-3 md:space-y-0 mb-8">
+                                <div class="flex space-x-2">
+                                    <div class="">
+                                        <h3
+                                            class="text-paragraph sm:text-sm text-xs font-bold uppercase tracking-wide sm:tracking-[0.2em] mb-0.5">
+                                            Make Deposit</h3>
+                                        <p class="sm:text-sm text-xs font-bold text-success">Step 1</p>
+                                    </div>
+                                    <div class="sm:w-[50px] w-7 h-3 border-b border-mute"></div>
+                                    <div class="">
+                                        <h3
+                                            class="text-mute sm:text-sm text-xs font-bold uppercase tracking-wide sm:tracking-[0.2em] mb-0.5">
+                                            Deposit Confirmation</h3>
+                                        <p class="sm:text-sm text-xs font-bold text-mute">Step 2</p>
+                                    </div>
+                                </div>
+
                                 <div class="flex items-center space-x-2">
                                     <span>
                                         <svg width="13" height="15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -270,11 +285,40 @@
                                 </div>
                             </div>
                             <h6 class="text-sm text-black font-bold mb-5">Your active deposit:</h6>
-                            <h2 class="text-3xl text-black font-bold">$ 17,300.00</h2>
+                            <h2 class="text-3xl text-black font-bold mb-7">$ 17,300.00</h2>
+                            <h4 class="text-xl text-black font-bold">Deposit replenishment</h4>
 
                             <!-- Balence Card Start -->
-                            <div class="mt-5">
-                                <h6 class="text-sm text-black font-bold mb-5">Balances</h6>
+                            <div class="border border-mute rounded p-5 mt-6">
+                                <p class="text-sm font-medium text-black mb-4">Top-up Amount:</p>
+
+                                <!-- Amount Input -->
+                                <div class="mt-1 relative max-w-sm rounded-md shadow-sm mb-8">
+                                    <input type="text" name="price" id="price"
+                                        class="focus:outline-none focus:ring-2 ring-mute block w-full py-2 pl-5 pr-12 text-xl font-bold shadow-inner-d bg-light-nav border border-mute rounded-md"
+                                        value="1.23456789" placeholder="0.00">
+                                    <div class="absolute inset-y-0 right-0">
+                                        <div class="relative flex items-center h-full">
+                                            <select id="currency" name="currency"
+                                                class="focus:outline-none h-full py-0 px-1 w-[72px] bg-transparent text-paragraph text-xl font-bold rounded-md appearance-none">
+                                                <option class="text-lg">BTC</option>
+                                                <option class="text-lg">CAD</option>
+                                                <option class="text-lg">EUR</option>
+                                            </select>
+                                            <span class="absolute inset-y-0 right-4 flex items-center">
+                                                <svg width="6" height="6" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M3.835 4.735a1 1 0 01-1.67 0L.56 2.301A1 1 0 011.394.75h3.212a1 1 0 01.835 1.55L3.835 4.736z"
+                                                        fill="#000" />
+                                                </svg>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="text-sm font-medium text-black mb-8">Your account balance:</p>
+
+                                <!-- Cards -->
                                 <div
                                     class="grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-8 sm:place-content-start">
                                     <div class="">
@@ -295,12 +339,6 @@
                                             </div>
                                             <h6 class="text-base font-bold text-black mb-0.5">1.45903210 BTC</h6>
                                             <p class="text-sm text-black mb-1">$ 11300</p>
-                                            <div class="flex space-x-[10px] mt-4">
-                                                <button
-                                                    class="bg-success-alt text-white text-center py-2 rounded text-[10px] font-bold tracking-widest uppercase w-full focus:outline-none">Deposit</button>
-                                                <button
-                                                    class="bg-paragraph text-white text-center py-2 rounded text-[10px] font-bold tracking-widest uppercase w-full focus:outline-none">Withdraw</button>
-                                            </div>
                                         </div>
                                     </div>
                                     <div class="">
@@ -321,14 +359,6 @@
                                             </div>
                                             <h6 class="text-base font-bold text-black mb-0.5">5.98273917 BCH</h6>
                                             <p class="text-sm text-black mb-1">$ 4700</p>
-                                            <div class="hidden group-hover:block">
-                                                <div class="flex space-x-[10px] mt-4">
-                                                    <button
-                                                        class="bg-success-alt text-white text-center py-2 rounded text-[10px] font-bold tracking-widest uppercase w-full focus:outline-none">Deposit</button>
-                                                    <button
-                                                        class="bg-paragraph text-white text-center py-2 rounded text-[10px] font-bold tracking-widest uppercase w-full focus:outline-none">Withdraw</button>
-                                                </div>
-                                            </div>
                                         </div>
                                     </div>
                                     <div class="">
@@ -349,14 +379,6 @@
                                             </div>
                                             <h6 class="text-base font-bold text-black mb-0.5">1.45903210 LTC</h6>
                                             <p class="text-sm text-black mb-1">$ 500</p>
-                                            <div class="hidden group-hover:block">
-                                                <div class="flex space-x-[10px] mt-4">
-                                                    <button
-                                                        class="bg-success-alt text-white text-center py-2 rounded text-[10px] font-bold tracking-widest uppercase w-full focus:outline-none">Deposit</button>
-                                                    <button
-                                                        class="bg-paragraph text-white text-center py-2 rounded text-[10px] font-bold tracking-widest uppercase w-full focus:outline-none">Withdraw</button>
-                                                </div>
-                                            </div>
                                         </div>
                                     </div>
                                     <div class="">
@@ -389,14 +411,6 @@
                                             </div>
                                             <h6 class="text-base font-bold text-black mb-0.5">1.45903210 ETH</h6>
                                             <p class="text-sm text-black mb-1">$ 803</p>
-                                            <div class="hidden group-hover:block">
-                                                <div class="flex space-x-[10px] mt-4">
-                                                    <button
-                                                        class="bg-success-alt text-white text-center py-2 rounded text-[10px] font-bold tracking-widest uppercase w-full focus:outline-none">Deposit</button>
-                                                    <button
-                                                        class="bg-paragraph text-white text-center py-2 rounded text-[10px] font-bold tracking-widest uppercase w-full focus:outline-none">Withdraw</button>
-                                                </div>
-                                            </div>
                                         </div>
                                     </div>
                                     <div class="">
@@ -409,245 +423,33 @@
                                             </div>
                                             <h6 class="text-base font-bold text-black mb-0.5">1.45903210 BTC</h6>
                                             <p class="text-sm text-black mb-1">$ 97</p>
-                                            <div class="hidden group-hover:block">
-                                                <div class="flex space-x-[10px] mt-4">
-                                                    <button
-                                                        class="bg-success-alt text-white text-center py-2 rounded text-[10px] font-bold tracking-widest uppercase w-full focus:outline-none">Deposit</button>
-                                                    <button
-                                                        class="bg-paragraph text-white text-center py-2 rounded text-[10px] font-bold tracking-widest uppercase w-full focus:outline-none">Withdraw</button>
-                                                </div>
-                                            </div>
                                         </div>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-wrap justify-between items-center mt-7">
+                                    <div class="">
+                                        <p class="text-sm font-medium text-black mb-4">If you have any questions, please
+                                            go
+                                            to the <a href="#" class="text-info">Video
+                                                instructions</a> </p>
+                                    </div>
+                                    <div class="mb-4">
+                                        <button
+                                            class="py-3 px-4 bg-success text-white text-sm font-bold rounded flex items-center">
+                                            <span>Next</span>
+                                            <span class="ml-2"><svg width="25" height="12" viewBox="0 0 25 12"
+                                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M24.7636 5.42386C25.0788 5.74206 25.0788 6.25795 24.7636 6.57614L19.6275 11.7614C19.3123 12.0795 18.8013 12.0795 18.4861 11.7614C18.1709 11.4432 18.1709 10.9273 18.4861 10.6091L22.2445 6.81478L1.60947e-06 6.81478L1.6807e-06 5.18522L22.2445 5.18522L18.4861 1.39091C18.1709 1.07272 18.1709 0.556834 18.4861 0.238643C18.8013 -0.079548 19.3123 -0.079548 19.6275 0.238643L24.7636 5.42386Z"
+                                                        fill="white" />
+                                                </svg>
+                                            </span>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
                             <!-- Balence Card End -->
-
-                            <!-- Statistic Table Section Start -->
-                            <div class="flex flex-col mt-10">
-                                <h6 class="text-sm font-bold text-black mb-2">Statistic</h6>
-                                <div class="py-2 overflow-x-auto">
-                                    <div class="align-middle inline-block min-w-full overflow-hidden -mx-6">
-                                        <table class="min-w-full">
-                                            <thead>
-                                                <tr>
-                                                    <th
-                                                        class="px-6 py-2 text-left text-[10px] leading-normal font-bold text-paragraph uppercase tracking-wider whitespace-nowrap">
-                                                        Crypto coin</th>
-                                                    <th
-                                                        class="px-6 py-2 text-left text-[10px] leading-normal font-bold text-paragraph uppercase tracking-wider whitespace-nowrap">
-                                                        Earned Total</th>
-                                                    <th
-                                                        class="px-6 py-2 text-left text-[10px] leading-normal font-bold text-paragraph uppercase tracking-wider whitespace-nowrap">
-                                                        Pending Withdrawal</th>
-                                                    <th
-                                                        class="px-6 py-2 text-left text-[10px] leading-normal font-bold text-paragraph uppercase tracking-wider whitespace-nowrap">
-                                                        Withdrew Total</th>
-                                                    <th
-                                                        class="px-6 py-2 text-left text-[10px] leading-normal font-bold text-paragraph uppercase tracking-wider whitespace-nowrap">
-                                                        Last Deposit</th>
-                                                    <th
-                                                        class="px-6 py-2 text-left text-[10px] leading-normal font-bold text-paragraph uppercase tracking-wider whitespace-nowrap">
-                                                        Last Withdrawal</th>
-                                                </tr>
-                                            </thead>
-
-                                            <tbody class="">
-                                                <tr>
-                                                    <td class="px-6 py-4">
-                                                        <div class="flex items-center">
-                                                            <div class="flex-shrink-0 h-5 w-5">
-                                                                <svg width="20" height="20" fill="none"
-                                                                    xmlns="http://www.w3.org/2000/svg">
-                                                                    <path
-                                                                        d="M9.866 20c5.449 0 9.866-4.477 9.866-10S15.315 0 9.866 0 0 4.477 0 10s4.417 10 9.866 10z"
-                                                                        fill="#E57734" />
-                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                        d="M6.64 6.506h.006c-.022.027-.018.02-.006 0zm.059 0l.001-.068-.054.068h.053zm0 0l-.004.377c-.001.15-.002.3-.005.444-.012.055.019.074.067.062h.124c.172 0 .358-.001.548.014.237.02.413.21.413.419.028 1.348.025 2.679.023 4.009.018.177-.103.312-.309.311a4.304 4.304 0 01-.563.01c-.073.018-.097.024-.103.104-.023.214-.065.46-.107.704-.012.055-.02.103-.027.15-.007.048-.015.095-.027.15.618.003 1.212.011 1.805.02.008.028.004.05.002.07a18.653 18.653 0 00-.01 1.34c-.012.054-.006.08.073.085.254-.01.508-.022.769-.009.07.006.073-.012.08-.055l.005-.018c-.004-.117-.001-.234.002-.352.002-.118.005-.236.002-.353a6.83 6.83 0 01.002-.352c.003-.118.005-.236.002-.353.23-.005.436-.004.642-.003.04.009.041.027.043.055.001.01.002.023.006.037-.023.422-.016.864-.009 1.305-.012.055-.006.08.073.086.115-.002.238 0 .36.002.123.002.246.004.36.001.128.018.128-.004.128-.097v-.013c0-.208-.003-.423-.005-.637l-.005-.638c.006-.08.048-.116.127-.11.503-.047 1-.118 1.49-.319.375-.145.67-.402.858-.787.15-.324.198-.65.209-1.017a2.01 2.01 0 00-.16-.846 1.594 1.594 0 00-.789-.69 2.071 2.071 0 00-.17-.062 2.073 2.073 0 01-.17-.062.16.16 0 00.062-.031c.01-.008.02-.015.03-.017.175-.122.344-.269.453-.452.144-.245.18-.514.185-.802 0-.417-.123-.804-.433-1.118a2.128 2.128 0 00-.776-.432l-.89-.169c-.08-.006-.11-.025-.104-.104.018-.135.011-.264.005-.392 0-.313-.001-.626-.008-.963-.012.003-.02-.001-.028-.006-.007-.005-.015-.01-.027-.006-.122-.003-.24-.003-.354-.003-.15 0-.297.001-.445-.006-.055-.013-.073.018-.06.067v.312c-.017.343-.016.656-.01.993-.006.01-.011.023-.016.036-.011.026-.022.052-.038.056-.103 0-.212 0-.32.002l-.322.002a.193.193 0 000-.105c0-.208-.003-.422-.005-.637-.002-.215-.004-.43-.004-.638.012-.055.005-.08-.073-.086a7.532 7.532 0 01-.745.004c-.08-.007-.097.024-.103.103.004.221.006.436.008.65l.007.65c-.006.08-.024.11-.102.104-.143-.004-.284-.001-.424.001-.141.003-.282.005-.424.002a9.751 9.751 0 00-.424.001c-.122.002-.243.004-.365.003zm2.687 5.753c.024-.006.054.013.054.013.065 0 .13 0 .196.002.354.003.724.007 1.076-.059.297-.047.563-.114.805-.278.423-.262.464-.924.1-1.25-.17-.167-.394-.241-.619-.316-.482-.132-.998-.11-1.493-.087l-.045.002c-.072-.006-.073.014-.077.078l-.002.02c.007.128.005.253.004.377s-.002.248.004.377c-.006.21-.005.417-.003.63 0 .16.002.323 0 .491zm1.664-3.125c-.091.049-.206.104-.254.116-.281.07-.534.092-.794.114-.1.009-.2.017-.302.029a4.06 4.06 0 01-.143-.004l-.142-.004c-.055-.012-.085-.03-.073-.086.017-.551.016-1.072.008-1.618.006-.08.024-.11.103-.104l.228.003c.302.004.591.007.893.057.242.044.496.137.673.327a.74.74 0 01-.197 1.17z"
-                                                                        fill="#fff" />
-                                                                </svg>
-                                                            </div>
-                                                            <div class="ml-2">
-                                                                <p class="text-sm text-black whitespace-nowrap">Bitcoin
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="px-6 py-4">
-                                                        <p class="text-sm text-black whitespace-nowrap">1.45903210</p>
-                                                    </td>
-                                                    <td class="px-6 py-4">
-                                                        <p class="text-sm text-black whitespace-nowrap">0</p>
-                                                    </td>
-                                                    <td class="px-6 py-4">
-                                                        <p class="text-sm text-black whitespace-nowrap">0.45903210</p>
-                                                    </td>
-                                                    <td class="px-6 py-4">
-                                                        <p class="text-sm text-black whitespace-nowrap">0.25913214</p>
-                                                    </td>
-                                                    <td class="px-6 py-4">
-                                                        <p class="text-sm text-black whitespace-nowrap">0.75903233</p>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="px-6 py-4">
-                                                        <div class="flex items-center">
-                                                            <div class="flex-shrink-0 h-5 w-5">
-                                                                <svg width="20" height="20" fill="none"
-                                                                    xmlns="http://www.w3.org/2000/svg">
-                                                                    <path
-                                                                        d="M9.866 20c5.449 0 9.866-4.477 9.866-10S15.315 0 9.866 0 0 4.477 0 10s4.417 10 9.866 10z"
-                                                                        fill="#31AF68" />
-                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                        d="M6.64 6.506h.006c-.022.027-.018.02-.006 0zm.059 0l.001-.068-.054.068h.053zm0 0l-.004.377c-.001.15-.002.3-.005.444-.012.055.019.074.067.062h.124c.172 0 .358-.001.548.014.237.02.413.21.413.419.028 1.348.025 2.679.023 4.009.018.177-.103.312-.309.311a4.304 4.304 0 01-.563.01c-.073.018-.097.024-.103.104-.023.214-.065.46-.107.704-.012.055-.02.103-.027.15-.007.048-.015.095-.027.15.618.003 1.212.011 1.805.02.008.028.004.05.002.07a18.653 18.653 0 00-.01 1.34c-.012.054-.006.08.073.085.254-.01.508-.022.769-.009.07.006.073-.012.08-.055l.005-.018c-.004-.117-.001-.234.002-.352.002-.118.005-.236.002-.353-.003-.116 0-.234.002-.352.003-.118.005-.236.002-.353.23-.005.436-.004.642-.003.04.009.041.027.043.055.001.01.002.023.006.037-.023.422-.016.864-.009 1.305-.012.055-.006.08.073.086.115-.002.238 0 .36.002.123.002.246.004.36.001.128.018.128-.004.128-.097v-.013c0-.208-.003-.423-.005-.637a87.025 87.025 0 01-.005-.638c.006-.08.048-.116.127-.11.503-.047 1-.118 1.49-.319.375-.145.67-.402.858-.787.15-.324.198-.65.209-1.017a2.01 2.01 0 00-.16-.846 1.594 1.594 0 00-.789-.69 2.075 2.075 0 00-.17-.062 2.077 2.077 0 01-.17-.062.16.16 0 00.062-.031c.01-.008.02-.015.03-.017.175-.122.344-.269.453-.452.144-.245.18-.514.185-.803 0-.416-.123-.803-.433-1.117a2.128 2.128 0 00-.776-.432l-.89-.169c-.08-.006-.11-.025-.104-.104.018-.135.011-.264.005-.392 0-.313-.001-.626-.008-.963-.012.003-.02-.001-.028-.006-.007-.005-.015-.01-.027-.006-.122-.003-.24-.003-.354-.003-.15 0-.297.001-.445-.006-.055-.013-.073.018-.06.067v.312c-.017.343-.016.656-.01.993-.006.01-.011.023-.016.036-.011.026-.022.052-.038.056-.103 0-.212 0-.32.002a23.28 23.28 0 01-.322.002.193.193 0 000-.105c0-.208-.003-.422-.005-.637-.002-.215-.004-.43-.004-.638.012-.055.005-.08-.073-.086a7.532 7.532 0 01-.745.004c-.08-.007-.097.024-.103.103.004.221.006.436.008.65l.007.65c-.006.08-.024.11-.102.104-.143-.004-.284-.001-.424.001-.141.003-.282.005-.424.002-.143-.004-.283-.001-.424.001-.122.002-.243.004-.365.003zm2.687 5.753c.024-.006.054.013.054.013.065 0 .13 0 .196.002.354.003.724.007 1.076-.059.297-.047.563-.114.805-.278.423-.262.464-.924.1-1.25-.17-.167-.394-.241-.619-.316-.482-.132-.998-.11-1.493-.087l-.045.002c-.072-.006-.073.014-.077.078l-.002.02c.007.128.005.253.004.377s-.002.248.004.377c-.006.21-.005.417-.003.63 0 .16.002.323 0 .491zm1.664-3.125c-.091.049-.206.104-.254.116-.281.07-.534.092-.794.114-.1.009-.2.017-.302.029-.052 0-.097-.002-.143-.004l-.142-.004c-.055-.012-.085-.03-.073-.086.017-.551.016-1.072.008-1.618.006-.08.024-.11.103-.104l.228.003c.302.004.591.007.893.057.242.044.496.137.673.327a.74.74 0 01-.197 1.17z"
-                                                                        fill="#fff" />
-                                                                </svg>
-                                                            </div>
-                                                            <div class="ml-2">
-                                                                <p class="text-sm text-black whitespace-nowrap">Bitcoin
-                                                                    Cash</p>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="px-6 py-4">
-                                                        <p class="text-sm text-black whitespace-nowrap">5.98273917</p>
-                                                    </td>
-                                                    <td class="px-6 py-4">
-                                                        <p class="text-sm text-black whitespace-nowrap">0.34091829</p>
-                                                    </td>
-                                                    <td class="px-6 py-4">
-                                                        <p class="text-sm text-black whitespace-nowrap">0</p>
-                                                    </td>
-                                                    <td class="px-6 py-4">
-                                                        <p class="text-sm text-black whitespace-nowrap">5.98273917</p>
-                                                    </td>
-                                                    <td class="px-6 py-4">
-                                                        <p class="text-sm text-black whitespace-nowrap">0</p>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="px-6 py-4">
-                                                        <div class="flex items-center">
-                                                            <div class="flex-shrink-0 h-5 w-5">
-                                                                <svg width="21" height="20" fill="none"
-                                                                    xmlns="http://www.w3.org/2000/svg">
-                                                                    <path
-                                                                        d="M10.14 20C4.493 19.968-.032 15.513 0 9.984 0 4.424 4.59-.03 10.204 0c5.648.032 10.172 4.518 10.14 10.047-.064 5.53-4.62 9.984-10.204 9.953z"
-                                                                        fill="#2F80FA" />
-                                                                    <path
-                                                                        d="M10.054 11.822c1.398.026 2.77.051 4.167.102-.051.204-.103.382-.129.56-.078.255-.155.485-.207.74-.026.127-.078.153-.207.153H7c.232-.892.465-1.733.698-2.625-.362.127-.673.255-1.035.407.103-.382.207-.713.336-1.07 0-.05.078-.076.13-.076.232-.102.491-.179.724-.28.078-.026.155-.103.155-.18l1.088-3.975c.025-.153.077-.204.258-.204h2.355c-.284 1.045-.543 2.09-.828 3.186a17.88 17.88 0 011.243-.484c-.052.204-.13.382-.155.56-.052.408-.285.638-.7.74a4.717 4.717 0 00-.543.203.443.443 0 00-.155.153c-.181.688-.362 1.351-.518 2.04v.05z"
-                                                                        fill="#fff" />
-                                                                </svg>
-                                                            </div>
-                                                            <div class="ml-2">
-                                                                <p class="text-sm text-black whitespace-nowrap">
-                                                                    Litecoin</p>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="px-6 py-4">
-                                                        <p class="text-sm text-black whitespace-nowrap">1.45903210</p>
-                                                    </td>
-                                                    <td class="px-6 py-4">
-                                                        <p class="text-sm text-black whitespace-nowrap">0</p>
-                                                    </td>
-                                                    <td class="px-6 py-4">
-                                                        <p class="text-sm text-black whitespace-nowrap">0.45903210</p>
-                                                    </td>
-                                                    <td class="px-6 py-4">
-                                                        <p class="text-sm text-black whitespace-nowrap">0.25913214</p>
-                                                    </td>
-                                                    <td class="px-6 py-4">
-                                                        <p class="text-sm text-black whitespace-nowrap">0.75903233</p>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="px-6 py-4">
-                                                        <div class="flex items-center">
-                                                            <div class="flex-shrink-0 h-5 w-5">
-                                                                <svg width="20" height="20" fill="none"
-                                                                    xmlns="http://www.w3.org/2000/svg">
-                                                                    <path
-                                                                        d="M9.866 20c5.449 0 9.866-4.477 9.866-10S15.315 0 9.866 0 0 4.477 0 10s4.417 10 9.866 10z"
-                                                                        fill="#8A92B2" />
-                                                                    <path
-                                                                        d="M9.98 4.007v4.62c0 .02-.02.04-.041.04-.144.059-.267.118-.41.178-.185.08-.39.159-.574.258l-.677.297-.554.238c-.225.1-.45.198-.676.297-.185.08-.37.16-.574.258-.144.06-.308.14-.452.199-.02 0-.02.02-.04 0H5.96c.061-.1.123-.179.184-.278.329-.535.677-1.07 1.005-1.606.349-.575.718-1.15 1.066-1.725.329-.536.657-1.071.985-1.587.246-.396.492-.773.717-1.17.041 0 .041-.02.062-.02 0 0-.02 0 0 0z"
-                                                                        fill="#fff" />
-                                                                    <path opacity=".2"
-                                                                        d="M13.958 10.392c-.308.198-.636.376-.943.555-1.005.575-1.99 1.13-2.994 1.705-.02 0-.02.02-.041.02-.02 0-.02-.02-.02-.02v-.06-3.866-.06c0-.02.02-.02.04-.02.082.04.165.08.267.12.246.119.513.218.759.337.225.099.43.198.656.277.225.1.43.199.656.298.185.08.39.158.574.258.185.079.39.158.574.257.144.06.287.14.451.199 0-.02 0 0 .02 0z"
-                                                                        fill="#fff" />
-                                                                    <path
-                                                                        d="M9.98 16.559s-.02 0 0 0c-.02 0-.02 0-.041-.02-.41-.555-.8-1.09-1.21-1.646L7.5 13.227c-.39-.535-.8-1.07-1.19-1.626l-.307-.416c0-.02-.02-.02-.02-.04.02 0 .02.02.04.02.554.318 1.128.635 1.682.952.635.377 1.292.734 1.927 1.11.103.06.226.12.328.179.02 0 .02.02.02.04V16.558zM5.981 10.392s.021 0 0 0c.021 0 .021 0 0 0 0 .02 0 .02 0 0z"
-                                                                        fill="#fff" />
-                                                                    <path opacity=".598"
-                                                                        d="M6.002 10.412c0-.02 0-.02 0 0 .205-.099.41-.178.615-.277l.8-.357c.205-.1.41-.178.615-.278.287-.138.595-.257.882-.396.205-.08.41-.179.615-.258.143-.06.287-.119.43-.198.02 0 .02-.02.041-.02v4.045c-.02.02-.02 0-.04 0-.062-.04-.124-.06-.165-.1l-3.752-2.14c-.02-.02-.041-.02-.041-.02z"
-                                                                        fill="#fff" />
-                                                                    <path opacity=".4"
-                                                                        d="M13.937 11.145c0 .02 0 .02-.02.04-1.19 1.626-2.379 3.232-3.568 4.858-.123.178-.246.337-.369.516v-.02-.04-3.034-.06c.266-.158.533-.316.8-.455l3.137-1.785c0-.02.02-.02.02-.02zM9.98 8.647v-.04-4.54-.04l3.937 6.305c.02.02.04.04.04.06-.081-.04-.163-.08-.266-.119-.102-.04-.205-.1-.307-.139-.062-.02-.123-.06-.205-.08-.103-.039-.226-.098-.328-.138-.062-.02-.123-.06-.185-.08l-.43-.178c-.083-.04-.144-.06-.226-.099-.103-.04-.205-.099-.308-.139-.061-.02-.123-.06-.184-.079l-.43-.178c-.083-.04-.144-.06-.226-.1-.103-.04-.205-.099-.308-.138-.061-.04-.143-.06-.205-.1l-.369-.178z"
-                                                                        fill="#fff" />
-                                                                </svg>
-                                                            </div>
-                                                            <div class="ml-2">
-                                                                <p class="text-sm text-black whitespace-nowrap">Ether
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="px-6 py-4">
-                                                        <p class="text-sm text-black whitespace-nowrap">5.98273917</p>
-                                                    </td>
-                                                    <td class="px-6 py-4">
-                                                        <p class="text-sm text-black whitespace-nowrap">0.34091829</p>
-                                                    </td>
-                                                    <td class="px-6 py-4">
-                                                        <p class="text-sm text-black whitespace-nowrap">0 </p>
-                                                    </td>
-                                                    <td class="px-6 py-4">
-                                                        <p class="text-sm text-black whitespace-nowrap">5.98273917</p>
-                                                    </td>
-                                                    <td class="px-6 py-4">
-                                                        <p class="text-sm text-black whitespace-nowrap">0</p>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="px-6 py-4">
-                                                        <div class="flex items-center">
-                                                            <div class="flex-shrink-0 h-5 w-5">
-                                                                <svg width="21" height="20" fill="none"
-                                                                    xmlns="http://www.w3.org/2000/svg">
-                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                        d="M0 9.984C-.032 15.514 4.493 19.968 10.14 20c5.584.031 10.14-4.424 10.204-9.953C20.376 4.518 15.852.032 10.204 0 4.59-.03 0 4.423 0 9.984zm10.13-3.486c0-.8.406-1.558 1.092-1.978.322-.21.727-.294 1.091-.292.364 0 .769.082 1.092.294A2.314 2.314 0 0114.496 6.5c0 .8-.406 1.558-1.092 1.977-.365.212-.81.294-1.213.294-.483 0-.848.377-.848.883 0 .63.482.882.848.882.444 0 .848.082 1.213.294a2.312 2.312 0 011.092 1.978c0 .8-.406 1.558-1.092 1.978a2.05 2.05 0 01-2.184 0 2.311 2.311 0 01-1.092-1.978c0-.42.12-.84.324-1.22.201-.42.079-.968-.324-1.219-.565-.337-1.01.043-1.172.337-.2.379-.483.714-.848.926-.688.42-1.498.42-2.183 0a2.31 2.31 0 01-1.093-1.978c0-.8.407-1.56 1.094-1.98a2.051 2.051 0 012.184 0c.363.251.648.588.889.925.241.42.769.588 1.172.337.565-.294.486-.882.324-1.219-.204-.376-.365-.8-.365-1.22z"
-                                                                        fill="#2FC9FA" />
-                                                                </svg>
-                                                            </div>
-                                                            <div class="ml-2">
-                                                                <p class="text-sm text-black whitespace-nowrap">Ripple
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="px-6 py-4">
-                                                        <p class="text-sm text-black whitespace-nowrap">1.45903210</p>
-                                                    </td>
-                                                    <td class="px-6 py-4">
-                                                        <p class="text-sm text-black whitespace-nowrap">0</p>
-                                                    </td>
-                                                    <td class="px-6 py-4">
-                                                        <p class="text-sm text-black whitespace-nowrap">0.45903210</p>
-                                                    </td>
-                                                    <td class="px-6 py-4">
-                                                        <p class="text-sm text-black whitespace-nowrap">0.25913214</p>
-                                                    </td>
-                                                    <td class="px-6 py-4">
-                                                        <p class="text-sm text-black whitespace-nowrap">0.75903233</p>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Statistic Table Section End -->
 
                         </div>
                     </main>
